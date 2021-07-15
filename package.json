@@ -1,0 +1,42 @@
+{
+  "name": "@sh4hids/gatsby-theme-open-sourcerer",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean"
+  },
+  "peerDependencies": {
+    "gatsby": "^3.9.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.13.2",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "gatsby": "^3.9.1",
+    "gatsby-plugin-styled-components": "^4.9.0",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0",
+    "styled-system": "^5.1.5"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.13.2",
+    "gatsby-plugin-styled-components": "^4.9.0",
+    "gatsby-source-filesystem": "^3.9.0",
+    "gatsby-transformer-yaml": "^3.9.0",
+    "styled-components": "^5.3.0",
+    "styled-system": "^5.1.5"
+  }
+}

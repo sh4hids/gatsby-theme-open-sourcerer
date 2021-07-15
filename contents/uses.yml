@@ -1,0 +1,15 @@
+title: Uses
+metaDescription: Irure aute esse adipisicing aliqua nostrud laboris.
+pageType: Uses
+contents:
+  - name: Operating Systems
+    type: Uses
+    items:
+      - deepin
+      - Pop!_OS
+  - name: Editors, Shell & Fonts
+    type: Uses
+    items:
+      - 'Atom (Theme: Horizon)'
+      - 'VS Code (Theme: Horizon)'
+  

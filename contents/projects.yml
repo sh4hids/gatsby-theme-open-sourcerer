@@ -1,0 +1,27 @@
+title: Projects
+metaDescription: Laborum qui laboris veniam non exercitation consectetur sunt ut consequat elit enim sunt veniam aute.
+pageType: Projects
+contents:
+  - name: My Open Source Project 1
+    type: Project
+    description: Ut autem et quidem. Ea tenetur voluptates sint necessitatibus. Odit et excepturi maxime similique sunt.
+    url: http://github.com/
+    totalStars: 43
+
+  - name: My Open Source Project 2
+    type: Project
+    description: Autem et quidem. Ea tenetur voluptates sint necessitatibus. Odit et excepturi maxime similique sunt.
+    url: http://github.com/
+    totalStars: 3
+
+  - name: My Open Source Project 3
+    type: Project
+    description: Ut autem et quidem. Ea tenetur voluptates sint necessitatibus. Odit et excepturi maxime similique sunt.
+    url: http://github.com/
+    totalStars: 12
+
+  - name: My Open Source Project 4
+    type: Project
+    description: Autem et quidem. Ea tenetur voluptates sint necessitatibus. Odit et excepturi maxime similique sunt.
+    url: http://github.com/
+    totalStars: 184
