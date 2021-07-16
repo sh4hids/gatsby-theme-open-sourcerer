@@ -1,5 +1,5 @@
 import React from 'react';
-import {graphql, useStaticQuery} from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import DefaultLayout from '../layouts/DefaultLayout';
 
@@ -24,8 +24,8 @@ const ProjectsTemplate = () => {
     }
   `);
 
-
-  const pageData = data.allYamlPage.nodes.find(node => node.pageType === 'Projects') || {};
+  const pageData =
+    data.allYamlPage.nodes.find((node) => node.pageType === 'Projects') || {};
 
   const title = pageData.title || 'Projects';
   const metaDescription = pageData.metaDescription || '';
@@ -35,11 +35,9 @@ const ProjectsTemplate = () => {
     <DefaultLayout>
       <h1>{title}</h1>
       <p>{metaDescription}</p>
-      <pre>
-        {JSON.stringify(projects, null, 2)}
-      </pre>
+      <pre>{JSON.stringify(projects, null, 2)}</pre>
     </DefaultLayout>
-  )
+  );
 };
 
 export default ProjectsTemplate;

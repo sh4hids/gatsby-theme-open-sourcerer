@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { getConfig } from './src/services/ConfigServices';
+import PropTypes from 'prop-types';
+import { getConfig, setConfig } from './src/services/ConfigServices';
 
 export const ThemeContext = React.createContext();
 
-const Provider = (props) => {
+const Provider = ({ children }) => {
   const config = getConfig() || {};
   const [theme, setTheme] = useState(config.theme || 'light');
 
@@ -11,14 +12,25 @@ const Provider = (props) => {
     <ThemeContext.Provider
       value={{
         theme,
-        changeTheme: (theme) => setTheme(theme),
+        changeTheme: (selectedTheme) => {
+          setConfig({ ...config, theme: selectedTheme });
+          return setTheme(selectedTheme);
+        },
       }}
     >
-      {props.children}
+      {children}
     </ThemeContext.Provider>
   );
 };
 
 const ThemeProvider = ({ element }) => <Provider>{element}</Provider>;
+
+Provider.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+ThemeProvider.propTypes = {
+  element: PropTypes.element.isRequired,
+};
 
 export default ThemeProvider;

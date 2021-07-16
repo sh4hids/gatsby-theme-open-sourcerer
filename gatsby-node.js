@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-exports.onPreBootstrap = ({reporter}, options) => {
+exports.onPreBootstrap = ({ reporter }, options) => {
   const contentPath = options.contentPath || 'contents';
 
-  if(!fs.existsSync(contentPath)) {
+  if (!fs.existsSync(contentPath)) {
     reporter.info(`creating the ${contentPath} directory`);
     fs.mkdirSync(contentPath);
   }
@@ -19,51 +19,50 @@ exports.createSchemaCustomization = ({ actions: { createTypes }, schema }) => {
       contents: [Content]
     }`,
     schema.buildObjectType({
-      name: "Project",
+      name: 'Project',
       fields: {
-        name: "String",
-        type: "String",
-        description: "String",
-        url: "String",
-        totalStars: "Int"
-      }
+        name: 'String',
+        type: 'String',
+        description: 'String',
+        url: 'String',
+        totalStars: 'Int',
+      },
     }),
     schema.buildObjectType({
-      name: "Uses",
+      name: 'Uses',
       fields: {
-        name: "String",
-        type: "String",
-        items: ["String"]
-      }
+        name: 'String',
+        type: 'String',
+        items: ['String'],
+      },
     }),
     schema.buildUnionType({
-      name: "Content",
+      name: 'Content',
       types: ['Project', 'Uses'],
       resolveType(value) {
-        console.log(value)
-        if(value.type === 'Project') {
+        if (value.type === 'Project') {
           return 'Project';
         }
-        if(value.type === 'Uses') {
+        if (value.type === 'Uses') {
           return 'Uses';
         }
-        throw 'No template defined'
-      }
-    })
-];
+        throw 'No template defined';
+      },
+    }),
+  ];
   createTypes(typeDefs);
 };
 
-exports.createPages = async ({actions}, options) => {
+exports.createPages = async ({ actions }, options) => {
   const basePath = options.basePath || '/';
 
   actions.createPage({
-    path: `/${basePath}/projects/`.replace(/\/\/+/g, "/"),
-    component: require.resolve('./src/templates/Projects.js')
+    path: `/${basePath}/projects/`.replace(/\/\/+/g, '/'),
+    component: require.resolve('./src/templates/Projects.js'),
   });
-  
+
   actions.createPage({
-    path: `/${basePath}/uses/`.replace(/\/\/+/g, "/"),
-    component: require.resolve('./src/templates/Uses.js')
+    path: `/${basePath}/uses/`.replace(/\/\/+/g, '/'),
+    component: require.resolve('./src/templates/Uses.js'),
   });
-}
+};
