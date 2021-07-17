@@ -41,6 +41,10 @@ const HeaderMenuWrapper = styled.ul`
         background-color: ${({ theme }) =>
           theme.name === 'light' ? theme.colors.bg0 : theme.colors.bg2};
       }
+
+      &:hover {
+        color: ${({ theme }) => theme.colors.primary[0]};
+      }
     }
   }
 

@@ -46,7 +46,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes }, schema }) => {
         if (value.type === 'Uses') {
           return 'Uses';
         }
-        throw 'No template defined';
+        throw new Error('No template defined');
       },
     }),
   ];
