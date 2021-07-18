@@ -1,4 +1,5 @@
 const fs = require('fs');
+const urljoin = require('url-join');
 
 exports.onPreBootstrap = ({ reporter }, options) => {
   const contentPath = options.contentPath || 'contents';
@@ -57,12 +58,12 @@ exports.createPages = async ({ actions }, options) => {
   const basePath = options.basePath || '/';
 
   actions.createPage({
-    path: `/${basePath}/projects/`.replace(/\/\/+/g, '/'),
+    path: urljoin(basePath, '/projects/'),
     component: require.resolve('./src/templates/Projects.js'),
   });
 
   actions.createPage({
-    path: `/${basePath}/uses/`.replace(/\/\/+/g, '/'),
+    path: urljoin(basePath, '/uses/'),
     component: require.resolve('./src/templates/Uses.js'),
   });
 };

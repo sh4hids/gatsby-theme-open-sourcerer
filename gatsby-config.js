@@ -1,3 +1,5 @@
+const urljoin = require('url-join');
+
 // module.exports = {
 //   plugins: [
 //     `gatsby-plugin-styled-components`,
@@ -20,7 +22,7 @@ module.exports = ({ contentPath = 'contents', basePath = '/' }) => ({
     title: 'Gatsby Theme Open Sourcerer',
     description:
       'Aliquip Lorem eiusmod culpa ex tempor sunt esse dolor ea ex non amet.',
-    siteUrl: `https://${`test.com${basePath}`.replace(/\/\/+/g, '/')}`,
+    siteUrl: urljoin('https://example.com', basePath),
     author: {
       fullName: 'John Doe',
       bio: 'Full-time open sourcerer',
@@ -28,6 +30,8 @@ module.exports = ({ contentPath = 'contents', basePath = '/' }) => ({
         github: 'https://github.com/',
         linkedin: 'https://linkedin.com/',
         twitter: 'https://twitter.com/',
+        facebook: 'https://facebook.com/',
+        instagram: 'https://instagram.com/',
       },
     },
   },

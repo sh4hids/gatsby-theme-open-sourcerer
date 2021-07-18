@@ -14,6 +14,7 @@ const mediaQueries = {
 };
 
 const lineHeights = [1, 1.3, 1.6];
+const fontWeights = [400, 500, 700];
 
 const colors = {
   primary: ['#1E8BB8', '#21AAE2', '#5CC7EB'],
@@ -47,6 +48,10 @@ fontSizes.display2 = fontSizes[9];
 lineHeights.body = lineHeights[2];
 lineHeights.heading = lineHeights[1];
 
+fontWeights.normal = fontWeights[0];
+fontWeights.medium = fontWeights[1];
+fontWeights.bold = fontWeights[2];
+
 colors.bg0 = colors.light[0];
 colors.bg1 = colors.light[1];
 colors.bg2 = colors.light[2];
@@ -61,6 +66,7 @@ const baseTheme = {
   breakpoints,
   mediaQueries,
   lineHeights,
+  fontWeights,
   colors,
 };
 

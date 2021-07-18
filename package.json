@@ -34,7 +34,6 @@
   "dependencies": {
     "@styled-icons/feather": "^10.34.0",
     "babel-plugin-styled-components": "^1.13.2",
-    "gatsby-plugin-styled-components": "^4.9.0",
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-transformer-yaml": "^3.9.0",
     "prop-types": "^15.7.2",

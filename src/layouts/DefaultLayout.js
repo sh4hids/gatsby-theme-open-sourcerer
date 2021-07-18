@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import * as themes from '../styles/themes';
 import GlobalStyle from '../styles/GlobalStyles';
 import { ThemeContext } from '../../ThemeProvider';
-import { Header, Container } from '../components';
+import { Header, Container, Footer } from '../components';
 
 const DefaultLayout = ({ children }) => (
   <ThemeContext.Consumer>
@@ -17,6 +17,7 @@ const DefaultLayout = ({ children }) => (
           <h1>Test</h1>
           {children}
         </Container>
+        <Footer />
       </ThemeProvider>
     )}
   </ThemeContext.Consumer>
