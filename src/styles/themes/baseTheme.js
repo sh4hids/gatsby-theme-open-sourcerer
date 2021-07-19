@@ -1,5 +1,5 @@
 /* eslint-disable prefer-destructuring */
-const space = [0, 4, 8, 16, 32];
+const space = [0, 4, 8, 16, 32, 64];
 const fontSizes = [13, 15, 18, 22, 26, 31, 37, 45, 54, 65];
 const fonts = {
   body: `'Fira Sans', sans-serif`,

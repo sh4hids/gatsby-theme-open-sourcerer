@@ -26,13 +26,34 @@ module.exports = ({ contentPath = 'contents', basePath = '/' }) => ({
     author: {
       fullName: 'John Doe',
       bio: 'Full-time open sourcerer',
-      links: {
-        github: 'https://github.com/',
-        linkedin: 'https://linkedin.com/',
-        twitter: 'https://twitter.com/',
-        facebook: 'https://facebook.com/',
-        instagram: 'https://instagram.com/',
-      },
+      links: [
+        {
+          site: 'facebook',
+          url: 'https://facebook.com/',
+        },
+        {
+          site: 'github',
+          url: 'https://github.com/',
+        },
+        {
+          site: 'instagram',
+          url: 'https://instagram.com/',
+        },
+        {
+          site: 'linkedin',
+          url: 'https://linkedin.com/',
+        },
+        {
+          site: 'twitter',
+          url: 'https://twitter.com/',
+        },
+      ],
+    },
+    footer: {
+      title: 'Words of Thanks',
+      description:
+        'Sunt adipisicing culpa deserunt est est excepteur voluptate occaecat voluptate irure elit sit nostrud culpa. Deserunt est est excepteur voluptate occaecat voluptate irure elit sit',
+      copyright: `© ${new Date().getFullYear()} John Doe. All Rights Reserved.`,
     },
   },
   plugins: [

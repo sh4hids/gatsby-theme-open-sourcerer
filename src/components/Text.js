@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { variant, space, typography, color } from 'styled-system';
+import { variant, space, typography, color, layout } from 'styled-system';
 
 const variants = {
   h1: {
@@ -74,6 +74,7 @@ const TextBase = styled.p`
   ${space};
   ${typography};
   ${color};
+  ${layout};
 `;
 
 // eslint-disable-next-line no-shadow
