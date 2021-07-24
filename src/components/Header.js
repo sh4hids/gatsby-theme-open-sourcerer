@@ -27,7 +27,7 @@ const HeaderContainer = styled(Container)`
   .theme-toggle-btn,
   .menu-toggle-btn {
     cursor: pointer;
-    margin-left: ${({ theme }) => theme.space.lg}px;
+    margin-left: ${({ theme }) => theme.space.xl}px;
 
     svg {
       position: relative;

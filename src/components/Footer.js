@@ -8,6 +8,19 @@ import Container from './Container';
 import Text from './Text';
 import SocialLinks from './SocialLinks';
 
+const formatLinks = (links = {}) => {
+  const formattedLinks = [];
+
+  Object.keys(links).forEach((key) => {
+    formattedLinks.push({
+      site: key,
+      url: links[key],
+    });
+  });
+
+  return formattedLinks;
+};
+
 const Wrapper = styled(Box)`
   background-color: ${({ theme }) =>
     theme.name === 'light' ? theme.colors.bg2 : theme.colors.bg0};
@@ -22,8 +35,11 @@ const Footer = () => {
             bio
             fullName
             links {
-              site
-              url
+              facebook
+              github
+              instagram
+              linkedin
+              twitter
             }
           }
           footer {
@@ -38,6 +54,7 @@ const Footer = () => {
 
   const author = data.site.siteMetadata.author || {};
   const footer = data.site.siteMetadata.footer || {};
+  const socialLinks = formatLinks(author.links);
 
   return (
     <Wrapper>
@@ -49,7 +66,7 @@ const Footer = () => {
           </Box>
           <Box width={[1, 1, 1 / 2]} p={3}>
             <Text variant="h6">Social Links</Text>
-            <SocialLinks links={author.links} />
+            <SocialLinks links={socialLinks} />
           </Box>
           <Box width={1} p={3}>
             <Text>{footer.copyright}</Text>

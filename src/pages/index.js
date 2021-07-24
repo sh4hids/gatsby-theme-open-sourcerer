@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { SEO } from '../components';
 import DefaultLayout from '../layouts/DefaultLayout';
 
 const IndexPage = () => (
   <DefaultLayout>
+    <SEO />
     <h1>Test page</h1>
     <h2>Test page</h2>
     <h3>Test page</h3>

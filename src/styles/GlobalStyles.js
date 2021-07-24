@@ -57,6 +57,10 @@ const GlobalStyle = createGlobalStyle`
       color: ${({ theme }) => theme.colors.primary[0]};
     }
   }
+
+  pre {
+     white-space: pre-wrap;
+  }
 `;
 
 export default GlobalStyle;

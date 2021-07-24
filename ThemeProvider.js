@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { getConfig, setConfig } from './src/services/ConfigServices';
+import { SEO } from './src/components';
 
 export const ThemeContext = React.createContext();
 
@@ -18,6 +19,7 @@ const Provider = ({ children }) => {
         },
       }}
     >
+      <SEO />
       {children}
     </ThemeContext.Provider>
   );

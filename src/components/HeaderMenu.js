@@ -58,7 +58,7 @@ const HeaderMenuWrapper = styled.ul`
 
     li {
       display: inline-block;
-      margin-right: ${theme.space.lg}px;
+      margin-right: ${theme.space.xl}px;
       text-align: left;
 
       &:last-child {
