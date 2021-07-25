@@ -59,11 +59,11 @@ exports.createPages = async ({ actions }, options) => {
 
   actions.createPage({
     path: urljoin(basePath, '/projects/'),
-    component: require.resolve('./src/pages/Projects.js'),
+    component: require.resolve('./src/templates/Projects.mdx'),
   });
 
   actions.createPage({
     path: urljoin(basePath, '/uses/'),
-    component: require.resolve('./src/pages/Uses.js'),
+    component: require.resolve('./src/templates/Uses.mdx'),
   });
 };

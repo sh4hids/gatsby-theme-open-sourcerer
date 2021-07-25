@@ -1,9 +1,10 @@
 const config = {
   title: 'Gatsby Theme Open Sourcerer',
   description: 'A minimal gatsby theme for open source developer',
-  siteUrl: '/',
+  siteUrl: 'https://example.com/',
   logo: '/logo.jpg',
   seoImage: '/seo.jpg',
+  heroImage: '',
   titleSeparator: '|',
   pathPrefix: '/',
   author: {

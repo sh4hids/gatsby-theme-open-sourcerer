@@ -108,8 +108,8 @@ const HeaderMenu = ({ isMenuOpen }) => (
       </Link>
     </li>
     <li>
-      <Link to="/contact/" activeClassName="active">
-        Contact
+      <Link to="/uses/" activeClassName="active">
+        Uses
       </Link>
     </li>
   </HeaderMenuWrapper>

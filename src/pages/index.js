@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { SEO } from '../components';
 import DefaultLayout from '../layouts/DefaultLayout';
 
 const IndexPage = () => (
-  <DefaultLayout>
-    <SEO />
+  <DefaultLayout
+    title=""
+    description="I am a fullstack JavaScript Developer from Dhaka, Bangladesh. I love to work with Node, React, MySQL, MongoDB and all other related technologies. When I am not coding, I like to read books, gardening and spend time with my family and friends."
+    heroTitle="Hi, I am John..."
+  >
     <h1>Test page</h1>
     <h2>Test page</h2>
     <h3>Test page</h3>

@@ -58,8 +58,12 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  pre {
-     white-space: pre-wrap;
+
+  .gatsby-highlight {
+    overflow: auto;
+    pre {
+      border-radius: 8px;
+    }
   }
 `;
 

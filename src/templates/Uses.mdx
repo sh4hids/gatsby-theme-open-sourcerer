@@ -1,0 +1,49 @@
+import { graphql } from 'gatsby';
+
+import { Text } from '../components';
+import DefaultLayout from '../layouts/DefaultLayout';
+
+<Text variant="h1">{props.data.allYamlPage.nodes[0].title}</Text>
+
+```javascript
+import { graphql } from 'gatsby';
+
+import { SEO } from '../components';
+
+
+<SEO title={pageData.title} />
+
+<h1>{pageData.title}</h1>
+
+```
+
+export const pageQuery = graphql`
+  query {
+    allYamlPage(filter: { pageType: { eq: "Uses" } }) {
+      nodes {
+        metaDescription
+        pageType
+        title
+        contents {
+          ... on Uses {
+            name
+            type
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default function Projects({ children, data }) {
+  const pageData = data.allYamlPage.nodes[0];
+  return (
+    <DefaultLayout
+      title={pageData.title}
+      description={pageData.metaDescription}
+      url="/uses/"
+    >
+      {children}
+    </DefaultLayout>
+  );
+}
