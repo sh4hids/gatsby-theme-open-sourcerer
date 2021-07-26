@@ -19,7 +19,6 @@ const config = require('./src/config');
 // };
 module.exports = (options = config) => ({
   siteMetadata: {
-    ...config,
     ...options,
   },
   plugins: [

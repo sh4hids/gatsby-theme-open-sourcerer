@@ -1,7 +1,9 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import urljoin from 'url-join';
-import config from '../config';
+import { graphql, useStaticQuery } from 'gatsby';
 import generateSchema from '../utils/generateSchema';
 
 const SEO = ({
@@ -15,9 +17,27 @@ const SEO = ({
   updatedAt,
   pageType,
 }) => {
-  title = `${title ? `${title} ${config.titleSeparator} ` : ``}${config.title}`;
-  url = urljoin(config.siteUrl, url);
-  description = description || config.description;
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          titleSeparator
+          siteUrl
+          seoImage
+          description
+        }
+      }
+    }
+  `);
+
+  const { siteMetadata } = data.site;
+
+  title = `${title ? `${title} ${siteMetadata.titleSeparator} ` : ``}${
+    siteMetadata.title
+  }`;
+  url = urljoin(siteMetadata.siteUrl, url);
+  description = description || siteMetadata.description;
 
   const schemaOrgJSONLD = generateSchema({
     author,
@@ -52,13 +72,13 @@ const SEO = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       {keywords && <meta name="keywords" content={keywords.join(', ')} />}
-      <meta property="fb:app_id" content={config.fbAppId || ''} />
+      <meta property="fb:app_id" content={siteMetadata.fbAppId || ''} />
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:creator"
-        content={config.author.links.twitter || ''}
+        content={siteMetadata.author ? siteMetadata.author.links.twitter : ''}
       />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />

@@ -1,21 +1,15 @@
 import { graphql } from 'gatsby';
 
-import { Text } from '../components';
+import { Text, UsesList } from '../components';
 import DefaultLayout from '../layouts/DefaultLayout';
 
-<Text variant="h1">{props.data.allYamlPage.nodes[0].title}</Text>
-
-```javascript
-import { graphql } from 'gatsby';
-
-import { SEO } from '../components';
-
-
-<SEO title={pageData.title} />
-
-<h1>{pageData.title}</h1>
-
-```
+<span>
+  {props.data.allYamlPage.nodes.length ? (
+    <UsesList contents={props.data.allYamlPage.nodes[0].contents} />
+  ) : (
+    <Text variant="h4">Sorry! No uses data found!</Text>
+  )}
+</span>
 
 export const pageQuery = graphql`
   query {
@@ -28,6 +22,7 @@ export const pageQuery = graphql`
           ... on Uses {
             name
             type
+            items
           }
         }
       }
@@ -36,11 +31,14 @@ export const pageQuery = graphql`
 `;
 
 export default function Projects({ children, data }) {
-  const pageData = data.allYamlPage.nodes[0];
+  const pageData = data.allYamlPage.nodes[0] || {};
   return (
     <DefaultLayout
-      title={pageData.title}
-      description={pageData.metaDescription}
+      title={pageData.title || 'Uses'}
+      description={
+        pageData.metaDescription ||
+        'Following are the tools I use in my day-to-day development work.'
+      }
       url="/uses/"
     >
       {children}

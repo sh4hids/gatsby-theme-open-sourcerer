@@ -3,8 +3,6 @@ import { graphql } from 'gatsby';
 import { Text } from '../components';
 import DefaultLayout from '../layouts/DefaultLayout';
 
-<Text variant="h1">{props.data.allYamlPage.nodes[0].title}</Text>
-
 ```javascript
 import { graphql } from 'gatsby';
 
@@ -36,7 +34,8 @@ export const pageQuery = graphql`
 `;
 
 export default function Projects({ children, data }) {
-  const pageData = data.allYamlPage.nodes[0];
+  console.log(data);
+  const pageData = data.allYamlPage.nodes[0] || {};
   return (
     <DefaultLayout
       title={pageData.title}
