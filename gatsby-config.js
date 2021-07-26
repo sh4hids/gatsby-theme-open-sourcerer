@@ -17,16 +17,17 @@ const config = require('./src/config');
 //     },
 //   ],
 // };
-module.exports = ({ contentPath = 'contents', basePath = '/' }) => ({
+module.exports = (options = config) => ({
   siteMetadata: {
     ...config,
+    ...options,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: contentPath,
+        path: options.contentPath || config.contentPath,
       },
     },
     {
@@ -99,6 +100,23 @@ module.exports = ({ contentPath = 'contents', basePath = '/' }) => ({
             },
           },
         ],
+      },
+    },
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: options.title || config.title,
+        short_name: options.title || config.title,
+        start_url: `/`,
+        icon: options.manifest ? options.manifest.icon : config.manifest.icon,
+        background_color: options.manifest
+          ? options.manifest.backgroundColor
+          : config.manifest.backgroundColor,
+        theme_color: options.manifest
+          ? options.manifest.themeColor
+          : config.manifest.themeColor,
+        display: `standalone`,
       },
     },
   ],

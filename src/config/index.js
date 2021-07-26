@@ -2,11 +2,17 @@ const config = {
   title: 'Gatsby Theme Open Sourcerer',
   description: 'A minimal gatsby theme for open source developer',
   siteUrl: 'https://example.com/',
+  contentPath: 'contents',
   logo: '/logo.jpg',
   seoImage: '/seo.jpg',
   heroImage: '',
   titleSeparator: '|',
   pathPrefix: '/',
+  manifest: {
+    icon: 'src/assets/images/logo.svg',
+    backgroundColor: `#FAFAFC`,
+    themeColor: `#27283F`,
+  },
   author: {
     fullName: 'Denver Coder 9',
     bio: 'Full-time open sourcerer',
