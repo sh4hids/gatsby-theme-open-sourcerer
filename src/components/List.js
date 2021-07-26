@@ -1,8 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
-import { space, layout, typography } from 'styled-system';
+import { space, layout, typography, color } from 'styled-system';
 import PropTypes from 'prop-types';
-import ArrowRightIcon from './ArrowRightIcon';
 
 const ListContainer = styled.ul`
   list-style: none;
@@ -13,22 +13,23 @@ const ListContainer = styled.ul`
 const ListItem = styled.li`
   font-size: ${({ theme }) => theme.fontSizes.h5}px;
 
-  svg {
-    width: 1.225rem;
-    height: 1.225rem;
-    margin-right: ${({ theme }) => theme.space.sm}px;
+  ::before {
+    color: ${({ theme }) => theme.colors.text1};
+    content: '⧉';
+    margin-right: ${({ theme }) => theme.space.md}px;
   }
 
   ${space};
   ${typography};
   ${layout};
+  ${color};
 `;
 
-const List = ({ items = [] }) => (
+const List = ({ items = [], ...props }) => (
   <ListContainer>
     {items.map((item) => (
-      <ListItem key={item}>
-        <ArrowRightIcon /> {item}
+      <ListItem key={item} {...props}>
+        {item}
       </ListItem>
     ))}
   </ListContainer>
