@@ -11,8 +11,9 @@ import Image from './Image';
 import heroImage from '../assets/images/hero-bg.svg';
 
 const Wrapper = styled(Container)`
-  height: 420px;
+  min-height: 360px;
   padding-top: 76px;
+  margin-bottom: ${({ theme }) => theme.space.xl}px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -63,7 +64,7 @@ const HeroSection = ({ title, description, image }) => {
         alt="hero-background"
         className="hero-background"
       />
-      <Box width={[1, 1, 3 / 4]}>
+      <Box width={[1, 1, 2.8 / 4]}>
         <Text variant="h1">{title || 'test'}</Text>
         <Text>{description}</Text>
       </Box>

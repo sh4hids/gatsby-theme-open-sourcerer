@@ -1,5 +1,6 @@
 const config = {
   title: 'Gatsby Theme Open Sourcerer',
+  shortTitle: 'HackerMan',
   description: 'A minimal gatsby theme for open source developer',
   siteUrl: 'https://example.com/',
   contentPath: 'contents',
@@ -16,6 +17,7 @@ const config = {
   author: {
     fullName: 'Denver Coder 9',
     bio: 'Full-time open sourcerer',
+    email: 'hello@example.com',
     links: {
       facebook: 'https://facebook.com/',
       github: 'https://github.com/',

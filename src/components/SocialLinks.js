@@ -18,6 +18,11 @@ const SocialLinksWrapper = styled.ul`
   li {
     margin-bottom: ${({ theme }) => theme.space.sm}px;
 
+    ::before {
+      content: '';
+      margin-right: 0;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -25,6 +30,7 @@ const SocialLinksWrapper = styled.ul`
     svg {
       position: relative;
       top: -1px;
+      margin-right: ${({ theme }) => theme.space.sm}px;
     }
 
     a {

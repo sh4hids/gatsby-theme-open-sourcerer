@@ -19,6 +19,7 @@ const config = require('./src/config');
 // };
 module.exports = (options = config) => ({
   siteMetadata: {
+    ...config,
     ...options,
   },
   plugins: [
@@ -106,7 +107,7 @@ module.exports = (options = config) => ({
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: options.title || config.title,
-        short_name: options.title || config.title,
+        short_name: options.shortTitle || config.shortTitle,
         start_url: `/`,
         icon: options.manifest ? options.manifest.icon : config.manifest.icon,
         background_color: options.manifest

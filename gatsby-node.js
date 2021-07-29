@@ -58,6 +58,11 @@ exports.createPages = async ({ actions }, options) => {
   const basePath = options.basePath || '/';
 
   actions.createPage({
+    path: urljoin(basePath, '/about/'),
+    component: require.resolve('./src/templates/About.mdx'),
+  });
+
+  actions.createPage({
     path: urljoin(basePath, '/projects/'),
     component: require.resolve('./src/templates/Projects.mdx'),
   });
@@ -65,5 +70,10 @@ exports.createPages = async ({ actions }, options) => {
   actions.createPage({
     path: urljoin(basePath, '/uses/'),
     component: require.resolve('./src/templates/Uses.mdx'),
+  });
+
+  actions.createPage({
+    path: urljoin(basePath, '/contact/'),
+    component: require.resolve('./src/templates/Contact.mdx'),
   });
 };

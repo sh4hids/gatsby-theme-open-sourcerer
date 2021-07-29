@@ -21,30 +21,24 @@ import { SEO } from '../components';
 
 export const pageQuery = graphql`
   query {
-    allYamlPage(filter: { pageType: { eq: "Projects" } }) {
+    allYamlPage(filter: { pageType: { eq: "About" } }) {
       nodes {
         metaDescription
         pageType
         title
-        contents {
-          ... on Project {
-            name
-            type
-          }
-        }
       }
     }
   }
 `;
 
-export default function Projects({ children, data }) {
+export default function About({ children, data }) {
   console.log(data);
   const pageData = data.allYamlPage.nodes[0] || {};
   return (
     <DefaultLayout
       title={pageData.title}
       description={pageData.metaDescription}
-      url="/projects/"
+      url="/about/"
     >
       {children}
     </DefaultLayout>

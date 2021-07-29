@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Container from './Container';
@@ -46,10 +47,20 @@ const HeaderContainer = styled(Container)`
 
 const Header = ({ theme, changeTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          shortTitle
+        }
+      }
+    }
+  `);
+
   return (
     <Wrapper>
       <HeaderContainer p={3}>
-        <BrandLogo href="/">MySite</BrandLogo>
+        <BrandLogo href="/">{data.site.siteMetadata.shortTitle}</BrandLogo>
         <Box display="flex">
           <HeaderMenu isMenuOpen={isMenuOpen} />
           <span

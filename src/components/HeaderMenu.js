@@ -25,6 +25,11 @@ const HeaderMenuWrapper = styled.ul`
     display: block;
     text-align: center;
 
+    ::before {
+      content: '';
+      margin-right: 0;
+    }
+
     a {
       display: inline-block;
       width: 100%;
@@ -110,6 +115,11 @@ const HeaderMenu = ({ isMenuOpen }) => (
     <li>
       <Link to="/uses/" activeClassName="active">
         Uses
+      </Link>
+    </li>
+    <li>
+      <Link to="/contact/" activeClassName="active">
+        Contact
       </Link>
     </li>
   </HeaderMenuWrapper>

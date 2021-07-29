@@ -65,6 +65,22 @@ const GlobalStyle = createGlobalStyle`
       border-radius: 8px;
     }
   }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: ${({ theme }) => theme.fontSizes.h5}px;
+
+      ::before {
+        color: ${({ theme }) => theme.colors.text1};
+        content: '⧉';
+        margin-right: ${({ theme }) => theme.space.md}px;
+      }
+    }
+  }
 `;
 
 export default GlobalStyle;

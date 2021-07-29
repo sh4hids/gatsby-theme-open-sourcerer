@@ -3,48 +3,26 @@ import { graphql } from 'gatsby';
 import { Text } from '../components';
 import DefaultLayout from '../layouts/DefaultLayout';
 
-- item 1
-- item 2
-- item 3
-
-```javascript
-import { graphql } from 'gatsby';
-
-import { SEO } from '../components';
-
-
-<SEO title={pageData.title} />
-
-<h1>{pageData.title}</h1>
-
-```
-
 export const pageQuery = graphql`
   query {
-    allYamlPage(filter: { pageType: { eq: "Projects" } }) {
+    allYamlPage(filter: { pageType: { eq: "Contact" } }) {
       nodes {
         metaDescription
         pageType
         title
-        contents {
-          ... on Project {
-            name
-            type
-          }
-        }
       }
     }
   }
 `;
 
-export default function Projects({ children, data }) {
+export default function About({ children, data }) {
   console.log(data);
   const pageData = data.allYamlPage.nodes[0] || {};
   return (
     <DefaultLayout
       title={pageData.title}
       description={pageData.metaDescription}
-      url="/projects/"
+      url="/about/"
     >
       {children}
     </DefaultLayout>
