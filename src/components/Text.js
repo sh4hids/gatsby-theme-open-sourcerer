@@ -77,8 +77,15 @@ const TextBase = styled.p`
   ${layout};
 `;
 
+const RawHTML = styled.div`
+  ${space};
+  ${typography};
+  ${color};
+  ${layout};
+`;
+
 // eslint-disable-next-line no-shadow
-const Text = ({ variant = 'p', ...props }) => {
+const Text = ({ variant = 'p', html, ...props }) => {
   switch (variant) {
     case 'h1':
       return <TextBase variant={variant} as="h1" {...props} />;
@@ -102,6 +109,8 @@ const Text = ({ variant = 'p', ...props }) => {
       return <TextBase variant={variant} as="label" {...props} />;
     case 'blockquote':
       return <TextBase variant={variant} as="blockquote" {...props} />;
+    case 'raw':
+      return <RawHTML dangerouslySetInnerHTML={{ __html: html }} {...props} />;
     default:
       return <TextBase variant="p" as="p" {...props} />;
   }
@@ -109,10 +118,12 @@ const Text = ({ variant = 'p', ...props }) => {
 
 Text.defaultProps = {
   variant: 'p',
+  html: '',
 };
 
 Text.propTypes = {
   variant: PropTypes.string,
+  html: PropTypes.string,
 };
 
 export default Text;

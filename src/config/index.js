@@ -9,6 +9,8 @@ const config = {
   heroImage: '',
   titleSeparator: '|',
   pathPrefix: '/',
+  blogPath: 'blog',
+  socialShareTitle: '-: SHARE :-',
   manifest: {
     icon: 'src/assets/images/logo.svg',
     backgroundColor: `#FAFAFC`,

@@ -5,6 +5,7 @@ export { default as Header } from './Header';
 export { default as HeroSection } from './HeroSection';
 export { default as MoonIcon } from './MoonIcon';
 export { default as SEO } from './SEO';
+export { default as SocialShareLinks } from './SocialShareLinks';
 export { default as SunIcon } from './SunIcon';
 export { default as Text } from './Text';
 export { default as UsesList } from './UsesList';

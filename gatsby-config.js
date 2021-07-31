@@ -31,6 +31,13 @@ module.exports = (options = config) => ({
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${options.contentPath || config.contentPath}/blog/`,
+      },
+    },
+    {
       resolve: 'gatsby-transformer-yaml',
       options: {
         typeName: 'YamlPage',
