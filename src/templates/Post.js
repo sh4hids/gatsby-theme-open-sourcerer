@@ -34,7 +34,7 @@ const Post = ({ pageContext, data }) => {
 };
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query ($slug: String!) {
     site {
       siteMetadata {
         siteUrl

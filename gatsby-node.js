@@ -1,10 +1,57 @@
 const fs = require('fs');
 const path = require('path');
 const urljoin = require('url-join');
-const { format } = require('date-fns');
+const { format, isBefore } = require('date-fns');
+const { paginate } = require('gatsby-awesome-pagination');
+
 const toKebabCase = require('./src/utils/toKebabCase');
 
 const postNodes = [];
+
+function addSiblingNodes(createNodeField) {
+  postNodes.sort(
+    (
+      { frontmatter: { publishedAt: date1 } },
+      { frontmatter: { publishedAt: date2 } }
+    ) => {
+      const dateA = new Date(date1);
+      const dateB = new Date(date2);
+
+      if (isBefore(dateA, dateB)) return 1;
+
+      if (isBefore(dateB, dateA)) return -1;
+
+      return 0;
+    }
+  );
+  for (let i = 0; i < postNodes.length; i += 1) {
+    const nextID = i + 1 < postNodes.length ? i + 1 : 0;
+    const prevID = i - 1 >= 0 ? i - 1 : postNodes.length - 1;
+    const currNode = postNodes[i];
+    const nextNode = postNodes[nextID];
+    const prevNode = postNodes[prevID];
+    createNodeField({
+      node: currNode,
+      name: 'nextTitle',
+      value: nextNode.frontmatter.title,
+    });
+    createNodeField({
+      node: currNode,
+      name: 'nextSlug',
+      value: nextNode.fields.slug,
+    });
+    createNodeField({
+      node: currNode,
+      name: 'prevTitle',
+      value: prevNode.frontmatter.title,
+    });
+    createNodeField({
+      node: currNode,
+      name: 'prevSlug',
+      value: prevNode.fields.slug,
+    });
+  }
+}
 
 exports.onPreBootstrap = ({ reporter }, options) => {
   const contentPath = options.contentPath || 'contents';
@@ -91,6 +138,14 @@ exports.createSchemaCustomization = ({ actions: { createTypes }, schema }) => {
   createTypes(typeDefs);
 };
 
+exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
+  const { name } = type;
+  const { createNodeField } = actions;
+  if (name === 'MarkdownRemark') {
+    addSiblingNodes(createNodeField);
+  }
+};
+
 exports.createPages = async ({ actions, graphql, reporter }, options) => {
   const basePath = options.basePath || '/';
 
@@ -155,6 +210,15 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
         },
       });
     });
+  });
+
+  paginate({
+    createPage: actions.createPage,
+    items: posts,
+    itemsPerPage: 12,
+    pathPrefix: ({ pageNumber }) =>
+      pageNumber === 0 ? `/${blogPath}/` : `/${blogPath}`,
+    component: require.resolve('./src/templates/Posts.js'),
   });
 
   actions.createPage({

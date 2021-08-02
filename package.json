@@ -38,6 +38,7 @@
     "@styled-icons/feather": "^10.34.0",
     "babel-plugin-styled-components": "^1.13.2",
     "date-fns": "^2.23.0",
+    "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-manifest": "^3.10.0",
     "gatsby-plugin-mdx": "^2.10.0",
     "gatsby-plugin-offline": "^4.10.0",
