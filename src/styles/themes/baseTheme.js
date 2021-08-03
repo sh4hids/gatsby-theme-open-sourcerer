@@ -28,6 +28,12 @@ const colors = {
   },
 };
 
+const elevations = [
+  `0px 0px 1px rgba(39, 40, 63, 0.08), 0px 0.4px 2px rgba(83, 85, 110, 0.16)`,
+  `0px 0px 1px rgba(39, 40, 63, 0.08), 0px 2px 4px rgba(25, 25, 36, 0.16)`,
+  `0px 2px 8px rgba(39, 40, 63, 0.08), 0px 16px 32px rgba(25, 25, 36, 0.16)`,
+];
+
 space.sm = space[1];
 space.md = space[2];
 space.lg = space[3];
@@ -52,6 +58,9 @@ fontWeights.normal = fontWeights[0];
 fontWeights.medium = fontWeights[1];
 fontWeights.bold = fontWeights[2];
 
+colors.primary0 = colors.primary[0];
+colors.primary1 = colors.primary[1];
+colors.primary2 = colors.primary[2];
 colors.bg0 = colors.light[0];
 colors.bg1 = colors.light[1];
 colors.bg2 = colors.light[2];
@@ -68,6 +77,7 @@ const baseTheme = {
   lineHeights,
   fontWeights,
   colors,
+  elevations,
 };
 
 export default baseTheme;

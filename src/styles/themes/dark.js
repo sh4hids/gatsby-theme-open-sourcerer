@@ -12,6 +12,11 @@ const dark = {
     text1: baseTheme.colors.light[1],
     text2: baseTheme.colors.light[2],
   },
+  elevations: [
+    `0px 0px 1px rgba(39, 40, 63, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.32)`,
+    `0px 0px 1px #27283F, 0px 2px 4px rgba(0, 0, 0, 0.32)`,
+    `0px 2px 8px rgba(39, 40, 63, 0.08), 0px 16px 32px rgba(0, 0, 0, 0.16)`,
+  ],
 };
 
 export default dark;

@@ -103,7 +103,7 @@ const HeaderMenu = ({ isMenuOpen }) => (
       </Link>
     </li>
     <li>
-      <Link to="/blog/" activeClassName="active">
+      <Link to="/blog/" activeClassName="active" partiallyActive>
         Blog
       </Link>
     </li>

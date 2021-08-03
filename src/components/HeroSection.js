@@ -10,9 +10,7 @@ import Container from './Container';
 import Box from './Box';
 import Image from './Image';
 import heroImage from '../assets/images/hero-bg.svg';
-import ClockIcon from './ClockIcon';
-import CalendarIcon from './CalendarIcon';
-import UserIcon from './UserIcon';
+import PostMeta from './PostMeta';
 
 const Wrapper = styled(Container)`
   min-height: 360px;
@@ -39,27 +37,6 @@ const Wrapper = styled(Container)`
     ${({ theme }) => `${theme.mediaQueries.md} {
       width: 20vw;
     }`};
-  }
-`;
-
-const PostMetaContainer = styled(Box)`
-  margin-top: ${({ theme }) => theme.space.lg}px;
-
-  p {
-    display: inline-block;
-    margin: 0 ${({ theme }) => theme.space.lg}px 0 0;
-  }
-
-  svg {
-    position: relative;
-    top: -2px;
-    margin-right: ${({ theme }) => theme.space.sm}px;
-  }
-
-  .post-meta-item {
-    :first-child {
-      display: block;
-    }
   }
 `;
 
@@ -94,26 +71,7 @@ const HeroSection = ({ title, description, image, postMeta }) => {
           {title || 'test'}
         </Text>
         {!postMeta && <Text>{description}</Text>}
-        {postMeta && (
-          <PostMetaContainer textAlign={['center', 'center', 'left']}>
-            <span className="post-meta-item">
-              <UserIcon size={16} />
-              <Text>
-                <Link to="/about/">{postMeta.author}</Link>
-              </Text>
-            </span>
-            <span className="post-meta-item">
-              <CalendarIcon size={16} />
-              <Text>
-                {format(new Date(postMeta.publishedAt), 'MMMM dd , yyyy')}
-              </Text>
-            </span>
-            <span className="post-meta-item">
-              <ClockIcon size={16} />
-              <Text>{postMeta.timeToRead} min</Text>
-            </span>
-          </PostMetaContainer>
-        )}
+        {postMeta && <PostMeta postMeta={postMeta} />}
       </Box>
     </Wrapper>
   );

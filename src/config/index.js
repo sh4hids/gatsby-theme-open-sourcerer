@@ -10,6 +10,8 @@ const config = {
   titleSeparator: '|',
   pathPrefix: '/',
   blogPath: 'blog',
+  blogTitle: 'Blog',
+  postPerPage: 8,
   socialShareTitle: '-: SHARE :-',
   manifest: {
     icon: 'src/assets/images/logo.svg',

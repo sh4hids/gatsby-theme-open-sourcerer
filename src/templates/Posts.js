@@ -1,26 +1,31 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { graphql, Link } from 'gatsby';
-import urljoin from 'url-join';
+import { graphql } from 'gatsby';
 
-import { Text } from '../components';
+import { Text, Paginate, PostSummaryCard } from '../components';
 import DefaultLayout from '../layouts/DefaultLayout';
 
-const Post = ({ data }) => {
+const Post = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges;
-  const { blogPath } = data.site.siteMetadata;
-
-  console.log(urljoin(blogPath, posts[0].node.fields.slug));
+  const { blogPath, blogTitle } = data.site.siteMetadata;
 
   return (
-    <DefaultLayout title="Blog" url="/blog/">
-      {posts.map((post) => (
-        <Text key={post.node.id}>
-          <Link to={`/${urljoin(blogPath, post.node.fields.slug)}`}>
-            {post.node.frontmatter.title}
-          </Link>
-        </Text>
-      ))}
+    <DefaultLayout
+      title={blogTitle || 'Blog'}
+      url={
+        pageContext.humanPageNumber > 1
+          ? `/blog/${pageContext.humanPageNumber}/`
+          : `/blog/`
+      }
+    >
+      {posts.length ? (
+        posts.map((post) => (
+          <PostSummaryCard post={post} blogPath={blogPath} key={post.node.id} />
+        ))
+      ) : (
+        <Text>No post to show!</Text>
+      )}
+      <Paginate pageContext={pageContext} />
     </DefaultLayout>
   );
 };
@@ -51,6 +56,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         blogPath
+        blogTitle
       }
     }
   }

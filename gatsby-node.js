@@ -169,6 +169,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       site(siteMetadata: {}) {
         siteMetadata {
           blogPath
+          postPerPage
         }
       }
     }
@@ -181,7 +182,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
   const tagSet = new Set();
   const posts = result.data.allMarkdownRemark.edges;
-  const { blogPath = 'blog' } = result.data.site.siteMetadata;
+  const { blogPath = 'blog', postPerPage = 8 } = result.data.site.siteMetadata;
 
   posts.forEach((edge, index) => {
     if (edge.node.frontmatter.tags) {
@@ -215,7 +216,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   paginate({
     createPage: actions.createPage,
     items: posts,
-    itemsPerPage: 12,
+    itemsPerPage: postPerPage,
     pathPrefix: ({ pageNumber }) =>
       pageNumber === 0 ? `/${blogPath}/` : `/${blogPath}`,
     component: require.resolve('./src/templates/Posts.js'),
