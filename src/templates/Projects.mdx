@@ -1,23 +1,15 @@
 import { graphql } from 'gatsby';
 
-import { Text } from '../components';
+import { Text, ProjectCard, Box } from '../components';
 import DefaultLayout from '../layouts/DefaultLayout';
 
-- item 1
-- item 2
-- item 3
-
-```javascript
-import { graphql } from 'gatsby';
-
-import { SEO } from '../components';
-
-
-<SEO title={pageData.title} />
-
-<h1>{pageData.title}</h1>
-
-```
+<Box display="flex" flexWrap="wrap" mx={-3}>
+  {props.data.allYamlPage.nodes[0].contents.map((project) => (
+    <Box p={3} width={[1, 1, 1 / 2]} key={project.name}>
+      <ProjectCard project={project} />
+    </Box>
+  ))}
+</Box>
 
 export const pageQuery = graphql`
   query {
@@ -29,7 +21,9 @@ export const pageQuery = graphql`
         contents {
           ... on Project {
             name
-            type
+            description
+            url
+            githubRepo
           }
         }
       }
@@ -38,7 +32,6 @@ export const pageQuery = graphql`
 `;
 
 export default function Projects({ children, data }) {
-  console.log(data);
   const pageData = data.allYamlPage.nodes[0] || {};
   return (
     <DefaultLayout

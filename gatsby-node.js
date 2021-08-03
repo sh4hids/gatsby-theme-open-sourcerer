@@ -110,7 +110,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes }, schema }) => {
         type: 'String',
         description: 'String',
         url: 'String',
-        totalStars: 'Int',
+        githubRepo: 'String',
       },
     }),
     schema.buildObjectType({
