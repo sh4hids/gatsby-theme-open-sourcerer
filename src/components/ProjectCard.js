@@ -44,12 +44,14 @@ const Wrapper = styled(Box)`
 
 const ProjectCard = ({ project, ...props }) => {
   const [starsCount, setStarsCount] = useState(0);
-  useEffect(() => {
-    fetch(`https://api.github.com/repos/${project.githubRepo}`)
-      .then((response) => response.json())
-      .then((resultData) => {
-        setStarsCount(resultData.stargazers_count);
-      });
+  useEffect(async () => {
+    const response = await fetch(
+      `https://api.github.com/repos/${project.githubRepo}`
+    );
+    const resultData = await response.json();
+    if (resultData) {
+      setStarsCount(resultData.stargazers_count);
+    }
   }, []);
 
   return (
