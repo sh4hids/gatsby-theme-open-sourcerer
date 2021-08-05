@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import { Text, Paginate, PostSummaryCard } from '../components';
 import DefaultLayout from '../layouts/DefaultLayout';
 
-const Post = ({ data, pageContext }) => {
+const Posts = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges;
   const { blogPath, blogTitle } = data.site.siteMetadata;
 
@@ -36,6 +36,7 @@ export const pageQuery = graphql`
       sort: { fields: [frontmatter___publishedAt], order: DESC }
       skip: $skip
       limit: $limit
+      filter: { frontmatter: { isPublished: { eq: true } } }
     ) {
       edges {
         node {
@@ -62,4 +63,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Post;
+export default Posts;

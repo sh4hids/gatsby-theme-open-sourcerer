@@ -205,7 +205,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     tagList.forEach((tag) => {
       actions.createPage({
         path: `/${blogPath}/tags/${toKebabCase(tag)}/`,
-        component: require.resolve('./src/templates/Tag.mdx'),
+        component: require.resolve('./src/templates/Tag.js'),
         context: {
           tag,
         },
@@ -240,5 +240,9 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   actions.createPage({
     path: urljoin(basePath, '/contact/'),
     component: require.resolve('./src/templates/Contact.mdx'),
+  });
+  actions.createPage({
+    path: urljoin(basePath, `/${blogPath}/tags/`),
+    component: require.resolve('./src/templates/Tags.js'),
   });
 };

@@ -12,7 +12,7 @@ const Post = ({ pageContext, data }) => {
   const author = data.site.siteMetadata.author.fullName;
   const { siteUrl } = data.site.siteMetadata;
 
-  console.log(post);
+  console.log(pageContext);
 
   return (
     <DefaultLayout
