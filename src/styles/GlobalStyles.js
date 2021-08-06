@@ -81,6 +81,31 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.colors.bg2};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: ${({ theme }) => theme.colors.primary0};
+    transition: all ease-in-out 0.3s;
+
+    
+    :hover {
+      background-color: ${({ theme }) => theme.colors.primary1};
+    }
+    
+    :active {
+      background-color: ${({ theme }) => theme.colors.primary2};
+    }
+  }
 `;
 
 export default GlobalStyle;

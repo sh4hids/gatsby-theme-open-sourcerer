@@ -3,16 +3,14 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import urljoin from 'url-join';
 
-import { Text, SocialShareLinks } from '../components';
+import { Text, SocialShareLinks, PostTags } from '../components';
 import DefaultLayout from '../layouts/DefaultLayout';
 
 const Post = ({ pageContext, data }) => {
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
   const author = data.site.siteMetadata.author.fullName;
-  const { siteUrl } = data.site.siteMetadata;
-
-  console.log(pageContext);
+  const { siteUrl, blogPath } = data.site.siteMetadata;
 
   return (
     <DefaultLayout
@@ -25,6 +23,7 @@ const Post = ({ pageContext, data }) => {
       }}
     >
       <Text variant="raw" html={postNode.html} />
+      <PostTags tags={post.tags} blogPath={blogPath} />
       <SocialShareLinks
         title={post.title}
         link={urljoin(siteUrl, pageContext.slug)}
@@ -38,6 +37,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         siteUrl
+        blogPath
         author {
           fullName
         }

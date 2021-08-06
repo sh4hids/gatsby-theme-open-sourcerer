@@ -6,6 +6,7 @@ export { default as HeroSection } from './HeroSection';
 export { default as MoonIcon } from './MoonIcon';
 export { default as Paginate } from './Paginate';
 export { default as PostSummaryCard } from './PostSummaryCard';
+export { default as PostTags } from './PostTags';
 export { default as ProjectCard } from './ProjectCard';
 export { default as SEO } from './SEO';
 export { default as SocialShareLinks } from './SocialShareLinks';

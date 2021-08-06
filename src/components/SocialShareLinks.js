@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import Text from './Text';
 import FacebookSquareIcon from './FacebookSquareIcon';
 import TwitterSquareIcon from './TwitterSquareIcon';
 import RedditSquareIcon from './RedditSquareIcon';
@@ -23,7 +21,7 @@ const Container = styled.ul`
   text-align: center;
 
   li {
-    display: inline-flex;
+    display: inline-block;
     margin-right: 16px;
     opacity: 0.8;
     transition: all 0.3s;
@@ -54,55 +52,42 @@ const Container = styled.ul`
   }
 `;
 
-const SocialShareLinks = ({ title, link }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site(siteMetadata: {}) {
-        siteMetadata {
-          socialShareTitle
-        }
-      }
-    }
-  `);
-
-  return (
-    <Container>
-      <Text>{data.site.siteMetadata.socialShareTitle || '-: Share :-'}</Text>
-      <li>
-        <SocialShareIcon
-          ariaLabel="twitter-share"
-          link={`https://twitter.com/intent/tweet?text=${title}&url=${link}`}
-        >
-          <TwitterSquareIcon />
-        </SocialShareIcon>
-      </li>
-      <li>
-        <SocialShareIcon
-          ariaLabel="facebook-share"
-          link={`https://facebook.com/sharer/sharer.php?u=${link}`}
-        >
-          <FacebookSquareIcon />
-        </SocialShareIcon>
-      </li>
-      <li>
-        <SocialShareIcon
-          ariaLabel="hackernews-share"
-          link={`https://news.ycombinator.com/submitlink?u=${link}&t=${title}`}
-        >
-          <HackerNewsSquareIcon />
-        </SocialShareIcon>
-      </li>
-      <li>
-        <SocialShareIcon
-          ariaLabel="reddit-share"
-          link={`https://reddit.com/submit/?url=${link}&resubmit=true&title=${title}`}
-        >
-          <RedditSquareIcon />
-        </SocialShareIcon>
-      </li>
-    </Container>
-  );
-};
+const SocialShareLinks = ({ title, link }) => (
+  <Container>
+    <li>
+      <SocialShareIcon
+        ariaLabel="twitter-share"
+        link={`https://twitter.com/intent/tweet?text=${title}&url=${link}`}
+      >
+        <TwitterSquareIcon />
+      </SocialShareIcon>
+    </li>
+    <li>
+      <SocialShareIcon
+        ariaLabel="facebook-share"
+        link={`https://facebook.com/sharer/sharer.php?u=${link}`}
+      >
+        <FacebookSquareIcon />
+      </SocialShareIcon>
+    </li>
+    <li>
+      <SocialShareIcon
+        ariaLabel="hackernews-share"
+        link={`https://news.ycombinator.com/submitlink?u=${link}&t=${title}`}
+      >
+        <HackerNewsSquareIcon />
+      </SocialShareIcon>
+    </li>
+    <li>
+      <SocialShareIcon
+        ariaLabel="reddit-share"
+        link={`https://reddit.com/submit/?url=${link}&resubmit=true&title=${title}`}
+      >
+        <RedditSquareIcon />
+      </SocialShareIcon>
+    </li>
+  </Container>
+);
 
 SocialShareIcon.propTypes = {
   link: PropTypes.string.isRequired,

@@ -17,8 +17,7 @@ export const pageQuery = graphql`
   }
 `;
 
-export default function About({ children, data }) {
-  console.log(data);
+export default function Contact({ children, data }) {
   const pageData = data.allYamlPage.nodes[0] || {};
   return (
     <DefaultLayout

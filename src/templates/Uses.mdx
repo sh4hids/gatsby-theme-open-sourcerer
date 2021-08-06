@@ -30,7 +30,7 @@ export const pageQuery = graphql`
   }
 `;
 
-export default function Projects({ children, data }) {
+export default function Uses({ children, data }) {
   const pageData = data.allYamlPage.nodes[0] || {};
   return (
     <DefaultLayout
