@@ -1,15 +1,9 @@
 import { graphql } from 'gatsby';
 
-import { Text, ProjectCard, Box } from '../components';
+import { ProjectGrid } from '../components';
 import DefaultLayout from '../layouts/DefaultLayout';
 
-<Box display="flex" flexWrap="wrap" mx={-3}>
-  {props.data.allYamlPage.nodes[0].contents.map((project) => (
-    <Box p={3} width={[1, 1, 1 / 2]} key={project.name}>
-      <ProjectCard project={project} />
-    </Box>
-  ))}
-</Box>
+<ProjectGrid projects={props.data.allYamlPage.nodes[0].contents} />
 
 export const pageQuery = graphql`
   query {
