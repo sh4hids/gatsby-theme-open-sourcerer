@@ -23,7 +23,7 @@ const Post = ({ pageContext, data }) => {
       }}
     >
       <Text variant="raw" html={postNode.html} />
-      <PostTags tags={post.tags} blogPath={blogPath} />
+      <PostTags tags={post.tags || {}} blogPath={blogPath} />
       <SocialShareLinks
         title={post.title}
         link={urljoin(siteUrl, pageContext.slug)}

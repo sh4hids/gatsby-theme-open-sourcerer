@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
-import toTitleCase from '../utils/toTitleCase';
-import toKebabCase from '../utils/toKebabCase';
-import { Text } from '../components';
+import { Box, TagItem, Text } from '../components';
 import DefaultLayout from '../layouts/DefaultLayout';
 
 const Tags = () => {
@@ -26,21 +24,24 @@ const Tags = () => {
   `);
 
   const { blogPath } = data.site.siteMetadata;
-  const { group: tags } = data.allMarkdownRemark;
+  let { group: tags } = data.allMarkdownRemark;
+
+  tags = tags.sort((tagA, tagB) => tagB.totalCount - tagA.totalCount);
 
   return (
-    <DefaultLayout title="Tags" url={`/${blogPath}/tags/`}>
+    <DefaultLayout
+      title="Tags"
+      url={`/${blogPath}/tags/`}
+      description="These are some of the topics I have written about so far. Click on each item to read all the posts related to that topic."
+    >
       {tags && tags.length ? (
-        <ul>
+        <Box display="flex" flexWrap="wrap" mx={-3}>
           {tags.map((tag) => (
-            <li key={tag.fieldValue}>
-              <Link to={`/${blogPath}/tags/${toKebabCase(tag.fieldValue)}/`}>
-                {toTitleCase(tag.fieldValue)}
-              </Link>{' '}
-              ({tag.totalCount})
-            </li>
+            <Box p={2} width={[1, 1, 1 / 2]} key={tag.fieldValue}>
+              <TagItem tag={tag.fieldValue} totalCount={tag.totalCount} />
+            </Box>
           ))}
-        </ul>
+        </Box>
       ) : (
         <Text>No tag to show!</Text>
       )}

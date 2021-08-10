@@ -68,18 +68,20 @@ const IndexPage = () => {
       description="I am a fullstack JavaScript Developer from Dhaka, Bangladesh. I love to work with Node, React, MySQL, MongoDB and all other related technologies. When I am not coding, I like to read books, gardening and spend time with my family and friends."
       heroTitle="Hi, I am John..."
     >
-      {projects && projects.length && (
+      {projects && projects.length ? (
         <Box>
           <Text variant="h2" textAlign="center" mb={4}>
             Open Source Projects
           </Text>
-          <ProjectGrid projects={projects} />
+          <ProjectGrid projects={projects.splice(0, 4)} />
           <Box textAlign="center" mt={4}>
             <LinkButton to="/projects/">See More Projects</LinkButton>
           </Box>
         </Box>
+      ) : (
+        <></>
       )}
-      {posts && posts.length && (
+      {posts && posts.length ? (
         <Box my={5}>
           <Text variant="h2" textAlign="center" mb={4}>
             Recent Posts
@@ -95,6 +97,8 @@ const IndexPage = () => {
             <LinkButton to={`/${blogPath}/`}>See More Posts</LinkButton>
           </Box>
         </Box>
+      ) : (
+        <></>
       )}
     </DefaultLayout>
   );

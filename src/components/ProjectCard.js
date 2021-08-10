@@ -13,9 +13,9 @@ const Wrapper = styled(Box)`
   background-color: ${({ theme }) => theme.colors.bg2};
   color: ${({ theme }) => theme.colors.text1};
   box-shadow: ${({ theme }) => theme.elevations[0]};
+  transition: all ease-in-out 0.3s;
 
   :hover {
-    transition: all ease-in-out 0.3s;
     box-shadow: ${({ theme }) => theme.elevations[2]};
   }
 

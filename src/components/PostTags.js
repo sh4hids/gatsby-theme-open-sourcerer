@@ -72,7 +72,7 @@ PostTags.defaultProps = {
 };
 
 PostTags.propTypes = {
-  tags: PropTypes.arrayOf(PropTypes.object),
+  tags: PropTypes.arrayOf(PropTypes.string),
   blogPath: PropTypes.string,
 };
 
