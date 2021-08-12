@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
 
 import * as themes from '../styles/themes';
@@ -220,7 +220,7 @@ const Four0Four = () => (
     {(context = { theme: 'light' }) => (
       <ThemeProvider theme={themes[context.theme]}>
         <SEO
-          title={'404 - Nowhere on space...'}
+          title="404 - Nowhere on space..."
           description="Nothing found"
           url="/404/"
         />
