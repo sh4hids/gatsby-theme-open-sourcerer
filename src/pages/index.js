@@ -58,9 +58,10 @@ const IndexPage = () => {
     }
   `);
 
-  const { contents: projects } = data.allYamlPage.nodes[0] || {};
+  const { contents } = data.allYamlPage.nodes[0] || {};
   const posts = data.allMarkdownRemark.edges;
   const { blogPath } = data.site.siteMetadata;
+  const projects = contents.slice(0, 4);
 
   return (
     <DefaultLayout
@@ -73,7 +74,7 @@ const IndexPage = () => {
           <Text variant="h2" textAlign="center" mb={4}>
             Open Source Projects
           </Text>
-          <ProjectGrid projects={projects.splice(0, 4)} />
+          <ProjectGrid projects={projects} limit={4} />
           <Box textAlign="center" mt={4}>
             <LinkButton to="/projects/">See More Projects</LinkButton>
           </Box>
