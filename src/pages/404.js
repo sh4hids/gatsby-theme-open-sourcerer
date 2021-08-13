@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'gatsby';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 
-import * as themes from '../styles/themes';
-import GlobalStyle from '../styles/GlobalStyles';
-import { Text, SEO } from '../components';
-import { ThemeContext } from '../../ThemeProvider';
+import { Text } from '../components';
+import { FullPageLayout } from '../layouts';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -216,54 +214,48 @@ const Container = styled.div`
 `;
 
 const Four0Four = () => (
-  <ThemeContext.Consumer>
-    {(context = { theme: 'light' }) => (
-      <ThemeProvider theme={themes[context.theme]}>
-        <SEO
-          title="404 - Nowhere on space..."
-          description="Nothing found"
-          url="/404/"
-        />
-        <GlobalStyle />
-        <Container>
-          <div className="error_404">
-            <Text variant="h3">404 | Nowhere on space...</Text>
-            <Text variant="h2">
-              It seems that you have reached the outer space...
-            </Text>
+  <FullPageLayout
+    title="404 - Nowhere on space..."
+    description="It seems that you have reached the outer space..."
+    url="/404/"
+  >
+    <Container>
+      <div className="error_404">
+        <Text variant="h3">404 | Nowhere on space...</Text>
+        <Text variant="h2">
+          It seems that you have reached the outer space...
+        </Text>
+      </div>
+      <div className="compass_container">
+        <div className="outside_circle">
+          <div className="center" />
+          <div className="outside_filling">
+            <div className="top_point" />
+            <div className="bottom_point" />
+            <div className="left_point" />
+            <div className="right_point" />
           </div>
-          <div className="compass_container">
-            <div className="outside_circle">
-              <div className="center" />
-              <div className="outside_filling">
-                <div className="top_point" />
-                <div className="bottom_point" />
-                <div className="left_point" />
-                <div className="right_point" />
-              </div>
-              <div className="inner_circle">
-                <div className="inner_filling">
-                  <span>N</span>
-                  <span>E</span>
-                  <span>S</span>
-                  <span>W</span>
-                  <div className="needle">
-                    <div className="top_needle">
-                      <div className="needle_inside" />
-                    </div>
-                    <div className="bottom_needle" />
-                  </div>
+          <div className="inner_circle">
+            <div className="inner_filling">
+              <span>N</span>
+              <span>E</span>
+              <span>S</span>
+              <span>W</span>
+              <div className="needle">
+                <div className="top_needle">
+                  <div className="needle_inside" />
                 </div>
+                <div className="bottom_needle" />
               </div>
             </div>
           </div>
-          <Text className="not_north" variant="h2">
-            To go back to Earth click <Link to="/">here</Link>.
-          </Text>
-        </Container>
-      </ThemeProvider>
-    )}
-  </ThemeContext.Consumer>
+        </div>
+      </div>
+      <Text className="not_north" variant="h2">
+        To go back to Earth click <Link to="/">here</Link>.
+      </Text>
+    </Container>
+  </FullPageLayout>
 );
 
 export default Four0Four;
