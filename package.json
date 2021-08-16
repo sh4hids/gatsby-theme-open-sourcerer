@@ -1,6 +1,6 @@
 {
   "name": "@sh4hids/gatsby-theme-open-sourcerer",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "main": "index.js",
   "scripts": {

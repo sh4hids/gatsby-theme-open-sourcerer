@@ -25,13 +25,15 @@ const Projects = () => {
     }
   `);
 
+  const {
+    title = 'Projects',
+    metaDescription = '',
+    contents = [],
+  } = data.allYamlPage.nodes[0] || {};
+
   return (
-    <DefaultLayout
-      title={data.allYamlPage.nodes[0].title}
-      description={data.allYamlPage.nodes[0].metaDescription}
-      url="/projects/"
-    >
-      <ProjectGrid projects={data.allYamlPage.nodes[0].contents} />
+    <DefaultLayout title={title} description={metaDescription} url="/projects/">
+      <ProjectGrid projects={contents} />
     </DefaultLayout>
   );
 };
