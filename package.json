@@ -6,7 +6,14 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json)\"",
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different",
+    "lint": "eslint --ignore-path .gitignore --ext .js",
+    "validate": "npm-run-all --parallel check-format lint",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "peerDependencies": {
     "gatsby": "^3.11.1",
@@ -25,6 +32,9 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby": "^3.11.1",
     "gatsby-plugin-styled-components": "^4.11.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

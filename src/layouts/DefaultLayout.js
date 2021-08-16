@@ -6,7 +6,7 @@ import * as themes from '../styles/themes';
 import GlobalStyle from '../styles/GlobalStyles';
 import { ThemeContext } from '../../ThemeProvider';
 import { Header, Container, Footer, SEO, HeroSection } from '../components';
-import toTitleCase from '../utils/toTitleCase'
+import toTitleCase from '../utils/toTitleCase';
 
 const DefaultLayout = ({
   children,
@@ -15,15 +15,24 @@ const DefaultLayout = ({
   description,
   url,
   image,
-  postMeta
+  postMeta,
 }) => (
   <ThemeContext.Consumer>
     {(context = { theme: 'light' }) => (
       <ThemeProvider theme={themes[context.theme]}>
-        <SEO title={toTitleCase(title)} description={description} url={url} image={image} />
+        <SEO
+          title={toTitleCase(title)}
+          description={description}
+          url={url}
+          image={image}
+        />
         <GlobalStyle />
         <Header theme={context.theme} changeTheme={context.changeTheme} />
-        <HeroSection title={heroTitle || toTitleCase(title)} description={description} postMeta={postMeta} />
+        <HeroSection
+          title={heroTitle || toTitleCase(title)}
+          description={description}
+          postMeta={postMeta}
+        />
         <Container p={3}>{children}</Container>
         <Footer />
       </ThemeProvider>
@@ -37,7 +46,7 @@ DefaultLayout.defaultProps = {
   description: '',
   url: '',
   image: '',
-  postMeta: null
+  postMeta: null,
 };
 
 DefaultLayout.propTypes = {
@@ -51,7 +60,7 @@ DefaultLayout.propTypes = {
     author: PropTypes.string,
     publishedAt: PropTypes.string,
     timeToRead: PropTypes.number,
-  })
+  }),
 };
 
 export default DefaultLayout;
