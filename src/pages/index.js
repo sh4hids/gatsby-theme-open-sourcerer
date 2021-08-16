@@ -15,7 +15,12 @@ const IndexPage = () => {
     query {
       site {
         siteMetadata {
+          title
           blogPath
+          author {
+            fullName
+            summary
+          }
         }
       }
       allYamlPage(filter: { pageType: { eq: "Projects" } }) {
@@ -58,16 +63,16 @@ const IndexPage = () => {
     }
   `);
 
-  const { contents } = data.allYamlPage.nodes[0] || {};
+  const { contents = [] } = data.allYamlPage.nodes[0] || {};
   const posts = data.allMarkdownRemark.edges;
-  const { blogPath } = data.site.siteMetadata;
+  const { title, blogPath, author } = data.site.siteMetadata;
   const projects = contents.slice(0, 4);
 
   return (
     <DefaultLayout
-      title=""
-      description="I am a fullstack JavaScript Developer from Dhaka, Bangladesh. I love to work with Node, React, MySQL, MongoDB and all other related technologies. When I am not coding, I like to read books, gardening and spend time with my family and friends."
-      heroTitle="Hi, I am John..."
+      title={title}
+      description={author.summary}
+      heroTitle={`Hi, I am ${author.fullName}`}
     >
       {projects && projects.length ? (
         <Box>

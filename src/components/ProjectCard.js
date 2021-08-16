@@ -14,6 +14,10 @@ const Wrapper = styled(Box)`
   color: ${({ theme }) => theme.colors.text1};
   box-shadow: ${({ theme }) => theme.elevations[0]};
   transition: all ease-in-out 0.3s;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   :hover {
     box-shadow: ${({ theme }) => theme.elevations[2]};
