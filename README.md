@@ -4,10 +4,18 @@ A configurable minimal gatsby portfolio theme for open source developers.
 
 ## Install
 
+### Using starter kit
+
+```
+gatsby new my-site https://github.com/sh4hids/gatsby-starter-open-sourcerer
+```
+
+### Step-by-step
+
 - Create a directory and go to that directory
 
 ```bash
-mkdir my-awesome-site && cd my-awesome-site
+mkdir my-site && cd my-site
 ```
 
 - Initialize npm package and install `react`, `react-dom`, `gatsby`, and the theme:
@@ -120,3 +128,7 @@ If you want to help in any way to make the theme better, you are welcome. Some o
 ## Showcase
 
 - [shahid.pro](https://shahid.pro)
+
+## Related projects
+
+- [starter kit](https://github.com/sh4hids/gatsby-starter-open-sourcerer)
