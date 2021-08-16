@@ -107,9 +107,9 @@ Copy the base layout for each of the pages from the following links and customiz
 
 You can import and use any components from the source folder. Some of the components directory are:
 
-- [layouts]()
-- [components]()
-- [themes]()
+- [components](https://github.com/sh4hids/gatsby-theme-open-sourcerer/tree/main/src/components)
+- [layouts](https://github.com/sh4hids/gatsby-theme-open-sourcerer/tree/main/src/layouts)
+- [themes](https://github.com/sh4hids/gatsby-theme-open-sourcerer/tree/main/src/styles/themes)
 
 Example:
 
