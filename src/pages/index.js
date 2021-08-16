@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import DefaultLayout from '../layouts/DefaultLayout';
+import { DefaultLayout } from '../layouts';
 import {
   Box,
   Text,
