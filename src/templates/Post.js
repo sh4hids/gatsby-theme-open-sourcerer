@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import urljoin from 'url-join';
 
 import { Text, SocialShareLinks, PostTags } from '../components';
-import DefaultLayout from '../layouts/DefaultLayout';
+import { DefaultLayout } from '../layouts';
 
 const Post = ({ pageContext, data }) => {
   const postNode = data.markdownRemark;

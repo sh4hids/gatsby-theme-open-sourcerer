@@ -3,7 +3,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import { Box, TagItem, Text } from '../components';
-import DefaultLayout from '../layouts/DefaultLayout';
+import { DefaultLayout } from '../layouts';
 
 const Tags = () => {
   const data = useStaticQuery(graphql`

@@ -3,7 +3,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { Text, Paginate, PostSummaryCard } from '../components';
-import DefaultLayout from '../layouts/DefaultLayout';
+import { DefaultLayout } from '../layouts';
 
 const Posts = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges;

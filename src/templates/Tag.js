@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import toKebabCase from '../utils/toKebabCase';
 import toTitleCase from '../utils/toTitleCase';
 import { Text, PostSummaryCard } from '../components';
-import DefaultLayout from '../layouts/DefaultLayout';
+import { DefaultLayout } from '../layouts';
 
 const Tag = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges;
