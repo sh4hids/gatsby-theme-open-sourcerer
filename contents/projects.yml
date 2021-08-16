@@ -2,26 +2,26 @@ title: Projects
 metaDescription: Laborum qui laboris veniam non exercitation consectetur sunt ut consequat elit enim sunt veniam aute.
 pageType: Projects
 contents:
-  - name: My Open Source Project 1
+  - name: gatsby-theme-open-sourcerer
     type: Project
-    description: Ut autem et quidem. Ea tenetur voluptates sint necessitatibus. Odit et excepturi maxime similique sunt.
-    url: http://github.com/
-    totalStars: 43
+    description: A configurable minimal gatsby portfolio theme for open source developers.
+    url: https://github.com/sh4hids/gatsby-theme-open-sourcerer
+    githubRepo: 'sh4hids/gatsby-theme-open-sourcerer'
 
-  - name: My Open Source Project 2
+  - name: Gatsby
     type: Project
-    description: Autem et quidem. Ea tenetur voluptates sint necessitatibus. Odit et excepturi maxime similique sunt.
-    url: http://github.com/
-    totalStars: 3
+    description: Gatsby is a free and open source framework based on React that helps developers build blazing fast websites and apps
+    url: https://github.com/gatsbyjs/gatsby
+    githubRepo: 'gatsbyjs/gatsby'
 
-  - name: My Open Source Project 3
+  - name: Book Manager
     type: Project
-    description: Ut autem et quidem. Ea tenetur voluptates sint necessitatibus. Odit et excepturi maxime similique sunt.
-    url: http://github.com/
-    totalStars: 12
+    description: A simple personal library management application.
+    url: https://github.com/bdTechies/book-manager
+    githubRepo: 'bdTechies/book-manager'
 
-  - name: My Open Source Project 4
+  - name: Deskaide
     type: Project
-    description: Autem et quidem. Ea tenetur voluptates sint necessitatibus. Odit et excepturi maxime similique sunt.
-    url: http://github.com/
-    totalStars: 184
+    description: An aide to your desk life!
+    url: https://github.com/deskaide/deskaide
+    githubRepo: 'deskaide/deskaide'

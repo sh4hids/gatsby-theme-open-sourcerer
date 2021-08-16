@@ -7,10 +7,10 @@ A configurable minimal gatsby portfolio theme for open source developers.
 - Create a directory and go to that directory
 
 ```bash
-mkdir my-awesome-site && cd ./my-awesome-site
+mkdir my-awesome-site && cd my-awesome-site
 ```
 
-- Initialize npm and install `react`, `react-dom`, and the theme:
+- Initialize npm package and install `react`, `react-dom`, `gatsby`, and the theme:
 
 ```bash
 npm init -y
@@ -23,7 +23,7 @@ npm i react react-dom gatsby @sh4hids/gatsby-theme-open-sourcerer
 npm i -g gatsby-cli
 ```
 
-Now create a file named `gatsby-config.js` and add the theme plugin like this:
+- Create a file named `gatsby-config.js` and add the theme plugin like this:
 
 ```javascript
 module.exports = {
@@ -31,7 +31,11 @@ module.exports = {
     {
       resolve: '@sh4hids/gatsby-theme-open-sourcerer',
       options: {
-        ...yourConfig,
+        title: 'HackerAfternoon',
+        shortTitle: 'HackerMan',
+        description: 'A minimal gatsby theme for open source developer',
+        siteUrl: 'https://example.com/',
+        // see configuration section for details configuration
       },
     },
   ],
