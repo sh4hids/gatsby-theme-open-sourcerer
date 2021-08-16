@@ -1,6 +1,6 @@
 {
   "name": "@sh4hids/gatsby-theme-open-sourcerer",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
@@ -40,7 +40,6 @@
     "date-fns": "^2.23.0",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-manifest": "^3.10.0",
-    "gatsby-plugin-mdx": "^2.10.0",
     "gatsby-plugin-offline": "^4.10.0",
     "gatsby-remark-autolink-headers": "^4.7.0",
     "gatsby-remark-prismjs": "^5.7.0",

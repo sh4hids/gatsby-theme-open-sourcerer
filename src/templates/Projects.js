@@ -1,9 +1,18 @@
+import React from 'react';
 import { graphql } from 'gatsby';
 
 import { ProjectGrid } from '../components';
-import DefaultLayout from '../layouts/DefaultLayout';
+import { DefaultLayout } from '../layouts';
 
-<ProjectGrid projects={props.data.allYamlPage.nodes[0].contents} />
+const Projects = ({ data, pageData }) => (
+  <DefaultLayout
+    title={pageData.title}
+    description={pageData.metaDescription}
+    url="/projects/"
+  >
+    <ProjectGrid projects={data.allYamlPage.nodes[0].contents} />
+  </DefaultLayout>
+);
 
 export const pageQuery = graphql`
   query {
@@ -25,15 +34,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default function Projects({ children, data }) {
-  const pageData = data.allYamlPage.nodes[0] || {};
-  return (
-    <DefaultLayout
-      title={pageData.title}
-      description={pageData.metaDescription}
-      url="/projects/"
-    >
-      {children}
-    </DefaultLayout>
-  );
-}
+export default Projects;

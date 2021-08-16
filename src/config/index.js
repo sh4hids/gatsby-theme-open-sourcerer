@@ -21,7 +21,10 @@ const config = {
   author: {
     fullName: 'Denver Coder 9',
     bio: 'Full-time open sourcerer',
+    summary:
+      'Eu nulla labore adipisicing consequat veniam qui ullamco. Fugiat laborum consequat elit enim quis ullamco sit minim dolor ad.',
     email: 'hello@example.com',
+    skype: 'johndoe',
     links: {
       facebook: 'https://facebook.com/',
       github: 'https://github.com/',

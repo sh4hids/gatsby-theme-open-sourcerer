@@ -4,11 +4,26 @@ A configurable minimal gatsby portfolio theme for open source developers.
 
 ## Install
 
+- Create a directory and go to that directory
+
 ```bash
-npm i @sh4hids/gatsby-theme-open-sourcerer
+mkdir my-awesome-site && cd ./my-awesome-site
 ```
 
-After installing, add the theme plugin in your `gatsby-config.js` like this:
+- Initialize npm and install `react`, `react-dom`, and the theme:
+
+```bash
+npm init -y
+npm i react react-dom gatsby @sh4hids/gatsby-theme-open-sourcerer
+```
+
+- Install `gatsby-cli` globally
+
+```bash
+npm i -g gatsby-cli
+```
+
+Now create a file named `gatsby-config.js` and add the theme plugin like this:
 
 ```javascript
 module.exports = {

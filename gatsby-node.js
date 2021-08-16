@@ -60,6 +60,11 @@ exports.onPreBootstrap = ({ reporter }, options) => {
     reporter.info(`creating the ${contentPath} directory`);
     fs.mkdirSync(contentPath);
   }
+
+  if (!fs.existsSync(`${contentPath}/blog`)) {
+    reporter.info(`creating the blog directory`);
+    fs.mkdirSync(`${contentPath}/blog`);
+  }
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -224,22 +229,22 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
   actions.createPage({
     path: urljoin(basePath, '/about/'),
-    component: require.resolve('./src/templates/About.mdx'),
+    component: require.resolve('./src/templates/About.js'),
   });
 
   actions.createPage({
     path: urljoin(basePath, '/projects/'),
-    component: require.resolve('./src/templates/Projects.mdx'),
+    component: require.resolve('./src/templates/Projects.js'),
   });
 
   actions.createPage({
     path: urljoin(basePath, '/uses/'),
-    component: require.resolve('./src/templates/Uses.mdx'),
+    component: require.resolve('./src/templates/Uses.js'),
   });
 
   actions.createPage({
     path: urljoin(basePath, '/contact/'),
-    component: require.resolve('./src/templates/Contact.mdx'),
+    component: require.resolve('./src/templates/Contact.js'),
   });
   actions.createPage({
     path: urljoin(basePath, `/${blogPath}/tags/`),

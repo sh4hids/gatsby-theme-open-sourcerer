@@ -1,9 +1,8 @@
 import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import urljoin from 'url-join';
-import { format } from 'date-fns';
 
 import Text from './Text';
 import Container from './Container';
