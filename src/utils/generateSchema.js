@@ -52,12 +52,14 @@ export default function generateSchema({
       url: url || `${config.siteUrl}`,
       ...(keywords && { keywords: keywords.join(', ') }),
 
-      image: {
-        '@type': 'ImageObject',
-        url: image || urljoin(config.siteUrl, config.seoImage),
-        width: 1280,
-        height: 720,
-      },
+      ...(image && {
+        image: {
+          '@type': 'ImageObject',
+          url: urljoin(config.siteUrl, image),
+          width: 1280,
+          height: 720,
+        },
+      }),
       description: description || config.siteDescription,
     }),
 
