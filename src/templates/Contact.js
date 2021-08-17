@@ -19,7 +19,9 @@ const Contact = () => {
 
   return (
     <DefaultLayout title="Contact" description="" url="/contact/">
-      <Text>Email: {data.useStaticQuery.siteMetadata.author.email}</Text>
+      <Text>
+        Email: {data.site.siteMetadata.author.email || 'not specified'}
+      </Text>
     </DefaultLayout>
   );
 };

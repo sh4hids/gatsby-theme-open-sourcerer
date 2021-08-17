@@ -1,5 +1,5 @@
 import urljoin from 'url-join';
-import config from '../config';
+import defaultConfig from '../config';
 
 export default function generateSchema({
   title,
@@ -11,6 +11,7 @@ export default function generateSchema({
   createdAt,
   updatedAt,
   type = 'Article',
+  config = { ...defaultConfig },
 }) {
   const schema = {
     '@context': 'https://schema.org',

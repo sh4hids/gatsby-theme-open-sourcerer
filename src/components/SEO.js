@@ -24,8 +24,15 @@ const SEO = ({
           siteTitle
           titleSeparator
           siteUrl
+          siteLogo
           seoImage
           siteDescription
+          author {
+            fullName
+            links {
+              twitter
+            }
+          }
         }
       }
     }
@@ -50,6 +57,9 @@ const SEO = ({
     updatedAt,
     createdAt,
     type: pageType,
+    config: {
+      ...siteMetadata,
+    },
   });
 
   return (

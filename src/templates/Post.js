@@ -15,18 +15,19 @@ const Post = ({ pageContext, data }) => {
   return (
     <DefaultLayout
       title={post.title}
-      url={pageContext.slug}
+      url={`/${blogPath}${pageContext.slug}`}
       postMeta={{
         author,
         timeToRead: postNode.timeToRead,
         publishedAt: post.publishedAt,
       }}
+      description={postNode.excerpt}
     >
       <Text variant="raw" html={postNode.html} />
       <PostTags tags={post.tags || {}} blogPath={blogPath} />
       <SocialShareLinks
         title={post.title}
-        link={urljoin(siteUrl, pageContext.slug)}
+        link={urljoin(siteUrl, blogPath, pageContext.slug)}
       />
     </DefaultLayout>
   );
