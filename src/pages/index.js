@@ -15,10 +15,9 @@ const IndexPage = () => {
     query {
       site {
         siteMetadata {
-          title
           blogPath
           author {
-            fullName
+            nickName
             summary
           }
         }
@@ -65,14 +64,16 @@ const IndexPage = () => {
 
   const { contents = [] } = data.allYamlPage.nodes[0] || {};
   const posts = data.allMarkdownRemark.edges;
-  const { title, blogPath, author } = data.site.siteMetadata;
+  const { blogPath, author } = data.site.siteMetadata;
   const projects = contents.slice(0, 4);
 
   return (
     <DefaultLayout
-      title={title}
+      title=""
       description={author.summary}
-      heroTitle={`Hi, I am ${author.fullName}`}
+      heroTitle={
+        author.nickName ? `Hi, I am ${author.nickName}...` : 'Hello there...'
+      }
     >
       {projects && projects.length ? (
         <Box>

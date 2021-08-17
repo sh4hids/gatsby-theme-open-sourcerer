@@ -72,7 +72,8 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
 
     li {
-      font-size: ${({ theme }) => theme.fontSizes.h5}px;
+      font-size: ${({ theme }) => theme.fontSizes.body}px;
+      font-weight: ${({ theme }) => theme.fontWeights.medium};
 
       ::before {
         color: ${({ theme }) => theme.colors.text1};

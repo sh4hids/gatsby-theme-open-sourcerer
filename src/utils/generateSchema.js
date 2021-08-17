@@ -25,7 +25,7 @@ export default function generateSchema({
     ...(type !== 'Person' && {
       publisher: {
         '@type': 'Organization',
-        name: config.title,
+        name: config.siteTitle,
         logo: {
           '@type': 'ImageObject',
           url: urljoin(config.siteUrl, config.logo),
@@ -58,7 +58,7 @@ export default function generateSchema({
         width: 1280,
         height: 720,
       },
-      description: description || config.description,
+      description: description || config.siteDescription,
     }),
 
     mainEntityOfPage: {

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
 import Text from './Text';
@@ -55,5 +56,13 @@ const PostMeta = ({ postMeta, ...others }) => (
     )}
   </PostMetaContainer>
 );
+
+PostMeta.propTypes = {
+  postMeta: PropTypes.shape({
+    author: PropTypes.string,
+    publishedAt: PropTypes.string,
+    timeToRead: PropTypes.number,
+  }).isRequired,
+};
 
 export default PostMeta;

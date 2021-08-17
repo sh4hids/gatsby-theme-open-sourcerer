@@ -51,7 +51,7 @@ const Header = ({ theme, changeTheme }) => {
     query {
       site {
         siteMetadata {
-          shortTitle
+          headerLogoText
         }
       }
     }
@@ -60,7 +60,7 @@ const Header = ({ theme, changeTheme }) => {
   return (
     <Wrapper>
       <HeaderContainer p={3}>
-        <BrandLogo href="/">{data.site.siteMetadata.shortTitle}</BrandLogo>
+        <BrandLogo href="/">{data.site.siteMetadata.headerLogoText}</BrandLogo>
         <Box display="flex">
           <HeaderMenu isMenuOpen={isMenuOpen} />
           <span

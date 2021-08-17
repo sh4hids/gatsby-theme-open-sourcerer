@@ -1,14 +1,13 @@
 /**
  * MIT License
- * Copyright (c) 2018 Sarah Drasner
- * Sarah Drasner's[@sdras] Night Owl
- * Ported by Sara vieria [@SaraVieira]
- * Added by Souvik Mandal [@SimpleIndian]
+ * Copyright (c) 2021 Shahidul Islam Majumder
+ * Based on Sarah Drasner's[@sdras] Night Owl
+ * Ported by Shahidul Islam Majumder [@sh4hids]
  */
 
 code[class*='language-'],
 pre[class*='language-'] {
-  color: #f2f2f5;
+  color: #f6f6f9;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
   white-space: pre;
@@ -60,7 +59,7 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  color: #f2f2f5;
+  color: #f6f6f9;
   background: #191924;
 }
 

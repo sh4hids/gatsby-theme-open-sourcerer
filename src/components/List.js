@@ -11,7 +11,8 @@ const ListContainer = styled.ul`
 `;
 
 const ListItem = styled.li`
-  font-size: ${({ theme }) => theme.fontSizes.h5}px;
+  font-size: ${({ theme }) => theme.fontSizes.body}px;
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
 
   ::before {
     color: ${({ theme }) => theme.colors.text1};

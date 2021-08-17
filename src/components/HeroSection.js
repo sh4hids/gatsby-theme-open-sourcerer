@@ -67,7 +67,7 @@ const HeroSection = ({ title, description, image, postMeta }) => {
       />
       <Box width={[1, 1, 2.8 / 4]} py={[0, 0, 4]}>
         <Text variant="h1" textAlign={['center', 'center', 'left']}>
-          {title || 'test'}
+          {title || 'Hero Section Title'}
         </Text>
         {!postMeta && <Text>{description}</Text>}
         {postMeta && <PostMeta postMeta={postMeta} />}
