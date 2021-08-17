@@ -57,7 +57,10 @@ const SEO = ({
       {/* General tags */}
       <title>{`${title}`}</title>
       <meta name="description" content={description} />
-      <meta name="image" content={urljoin(siteMetadata.siteUrl, image)} />
+      <meta
+        name="image"
+        content={image ? urljoin(siteMetadata.siteUrl, image) : ''}
+      />
 
       {/* Schema.org tags */}
       <script type="application/ld+json">
@@ -73,7 +76,7 @@ const SEO = ({
       <meta property="og:description" content={description} />
       <meta
         property="og:image"
-        content={urljoin(siteMetadata.siteUrl, image)}
+        content={image ? urljoin(siteMetadata.siteUrl, image) : ''}
       />
       {keywords && <meta name="keywords" content={keywords.join(', ')} />}
       <meta property="fb:app_id" content={siteMetadata.fbAppId || ''} />
@@ -88,7 +91,7 @@ const SEO = ({
       <meta name="twitter:description" content={description} />
       <meta
         name="twitter:image"
-        content={urljoin(siteMetadata.siteUrl, image)}
+        content={image ? urljoin(siteMetadata.siteUrl, image) : ''}
       />
     </Helmet>
   );
