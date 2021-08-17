@@ -18,7 +18,7 @@ export default function generateSchema({
 
     ...(type === 'Person' && {
       name: author.fullName || config.author.fullName,
-      url: author.url || urljoin(config.siteUrl, `about`),
+      url: author.url || urljoin(config.siteUrl, `/about/`),
       sameAs: [author.links.twitter || config.author.links.twitter],
     }),
 
@@ -28,7 +28,7 @@ export default function generateSchema({
         name: config.siteTitle,
         logo: {
           '@type': 'ImageObject',
-          url: urljoin(config.siteUrl, config.logo),
+          url: urljoin(config.siteUrl, config.siteLogo),
           width: 1024,
           height: 1024,
         },
@@ -37,7 +37,7 @@ export default function generateSchema({
         author: {
           '@type': 'Person',
           name: config.author.fullName,
-          url: urljoin(config.siteUrl, `about`),
+          url: urljoin(config.siteUrl, `/about/`),
           sameAs: [config.author.links.twitter],
         },
       }),

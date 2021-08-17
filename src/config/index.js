@@ -2,6 +2,7 @@ const config = {
   siteTitle: 'Gatsby Theme Open Sourcerer',
   siteDescription: 'A minimal gatsby theme for open source developer',
   siteUrl: 'https://example.com/',
+  siteLogo: '',
   contentPath: 'contents',
   headerLogoText: 'HackerMan',
   seoImage: '/images/seo.jpg',
