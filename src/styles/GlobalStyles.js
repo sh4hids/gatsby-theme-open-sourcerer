@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: ${({ theme }) => theme.lineHeights.heading};
+    margin: ${({ theme }) => theme.space.xl}px 0;
   }
 
   h1 {
@@ -61,6 +62,8 @@ const GlobalStyle = createGlobalStyle`
 
   .gatsby-highlight {
     overflow: auto;
+    margin: ${({ theme }) => theme.space.lg}px 0;
+    
     pre {
       border-radius: 8px;
     }
@@ -93,7 +96,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-    border-radius: 8px;
     cursor: pointer;
     background-color: ${({ theme }) => theme.colors.primary0};
     transition: all ease-in-out 0.3s;
