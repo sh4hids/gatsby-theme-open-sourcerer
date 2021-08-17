@@ -59,7 +59,11 @@ const SEO = ({
       <meta name="description" content={description} />
       <meta
         name="image"
-        content={image ? urljoin(siteMetadata.siteUrl, image) : ''}
+        content={
+          image && siteMetadata.siteUrl
+            ? urljoin(siteMetadata.siteUrl, image)
+            : ''
+        }
       />
 
       {/* Schema.org tags */}
@@ -76,7 +80,11 @@ const SEO = ({
       <meta property="og:description" content={description} />
       <meta
         property="og:image"
-        content={image ? urljoin(siteMetadata.siteUrl, image) : ''}
+        content={
+          image && siteMetadata.siteUrl
+            ? urljoin(siteMetadata.siteUrl, image)
+            : ''
+        }
       />
       {keywords && <meta name="keywords" content={keywords.join(', ')} />}
       <meta property="fb:app_id" content={siteMetadata.fbAppId || ''} />
@@ -91,7 +99,11 @@ const SEO = ({
       <meta name="twitter:description" content={description} />
       <meta
         name="twitter:image"
-        content={image ? urljoin(siteMetadata.siteUrl, image) : ''}
+        content={
+          image && siteMetadata.siteUrl
+            ? urljoin(siteMetadata.siteUrl, image)
+            : ''
+        }
       />
     </Helmet>
   );
