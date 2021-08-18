@@ -35,7 +35,7 @@ const PostMeta = ({ postMeta, ...others }) => {
     query {
       site {
         siteMetadata {
-          urlDateFormat
+          displayDateFormat
         }
       }
     }
