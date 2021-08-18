@@ -1,8 +1,14 @@
 {
   "name": "@sh4hids/gatsby-theme-open-sourcerer",
-  "version": "0.1.7",
+  "description": "A configurable minimal gatsby portfolio theme for open source developers.",
+  "version": "0.1.8",
   "license": "MIT",
   "main": "index.js",
+  "author": {
+    "name": "Shahidul Islam Majumder",
+    "email": "hello@shahid.pro",
+    "url": "https://shahid.pro"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -63,5 +69,11 @@
     "styled-components": "^5.3.0",
     "styled-system": "^5.1.5",
     "url-join": "^4.0.1"
-  }
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby theme",
+    "portfolio",
+    "portfolio theme"
+  ]
 }

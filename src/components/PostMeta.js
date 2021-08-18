@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
@@ -30,32 +30,48 @@ const PostMetaContainer = styled(Box)`
   }
 `;
 
-const PostMeta = ({ postMeta, ...others }) => (
-  <PostMetaContainer textAlign={['center', 'center', 'left']} {...others}>
-    {postMeta.author && (
-      <span className="post-meta-item post-meta-author">
-        <UserIcon size={16} />
-        <Text>
-          <Link to="/about/">{postMeta.author}</Link>
-        </Text>
-      </span>
-    )}
+const PostMeta = ({ postMeta, ...others }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          urlDateFormat
+        }
+      }
+    }
+  `);
 
-    {postMeta.publishedAt && (
-      <span className="post-meta-item">
-        <CalendarIcon size={16} />
-        <Text>{format(new Date(postMeta.publishedAt), 'MMMM dd , yyyy')}</Text>
-      </span>
-    )}
+  const { displayDateFormat = 'MMMM dd, yyyy' } = data.site.siteMetadata || {};
 
-    {postMeta.timeToRead && (
-      <span className="post-meta-item">
-        <ClockIcon size={16} />
-        <Text>{postMeta.timeToRead} min read</Text>
-      </span>
-    )}
-  </PostMetaContainer>
-);
+  return (
+    <PostMetaContainer textAlign={['center', 'center', 'left']} {...others}>
+      {postMeta.author && (
+        <span className="post-meta-item post-meta-author">
+          <UserIcon size={16} />
+          <Text>
+            <Link to="/about/">{postMeta.author}</Link>
+          </Text>
+        </span>
+      )}
+
+      {postMeta.publishedAt && (
+        <span className="post-meta-item">
+          <CalendarIcon size={16} />
+          <Text>
+            {format(new Date(postMeta.publishedAt), displayDateFormat)}
+          </Text>
+        </span>
+      )}
+
+      {postMeta.timeToRead && (
+        <span className="post-meta-item">
+          <ClockIcon size={16} />
+          <Text>{postMeta.timeToRead} min read</Text>
+        </span>
+      )}
+    </PostMetaContainer>
+  );
+};
 
 PostMeta.propTypes = {
   postMeta: PropTypes.shape({

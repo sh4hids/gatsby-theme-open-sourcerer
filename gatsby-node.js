@@ -67,7 +67,18 @@ exports.onPreBootstrap = ({ reporter }, options) => {
   }
 };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = async ({ node, actions, graphql, getNode }) => {
+  const result = await graphql(`
+    query {
+      site(siteMetadata: {}) {
+        siteMetadata {
+          urlDateFormat
+        }
+      }
+    }
+  `);
+
+  const { urlDateFormat = 'yyyy/MM/dd' } = result.site.siteMetadata || {};
   const { createNodeField } = actions;
   let slug;
   if (node.internal.type === 'MarkdownRemark') {
@@ -92,7 +103,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         slug = `/${toKebabCase(node.frontmatter.slug)}`;
     }
 
-    const date = format(new Date(node.frontmatter.publishedAt), 'yyyy/MM/dd');
+    const date = format(new Date(node.frontmatter.publishedAt), urlDateFormat);
     slug = `/${date}${slug}/`;
     createNodeField({ node, name: 'slug', value: slug });
     postNodes.push(node);
