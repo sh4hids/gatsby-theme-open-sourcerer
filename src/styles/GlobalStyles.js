@@ -87,6 +87,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .post-body {
+    p {
+      margin: 2rem 0;
+
+      :first-child {
+        margin-top: 0;
+      }
+    }
+
     h1,
     h2,
     h3,
