@@ -14,7 +14,8 @@ const TagListWrapper = styled.ul`
   text-align: center;
 
   li {
-    margin-right: ${({ theme }) => theme.space.lg}px;
+    margin: 0 ${({ theme }) => theme.space.lg}px
+      ${({ theme }) => theme.space.lg}px 0;
     display: inline-block;
     font-size: ${({ theme }) => theme.fontSizes.body}px;
     background-color: ${({ theme }) =>
@@ -59,7 +60,7 @@ const PostTags = ({ tags = [], blogPath = '' }) => (
       <li key={item}>
         <Link to={`/${blogPath}/tags/${toKebabCase(item)}/`}>
           <HashIcon size={20} />
-          {toTitleCase(item)}
+          {toTitleCase(item).replace(/\s\s+/g, ' ')}
         </Link>
       </li>
     ))}
