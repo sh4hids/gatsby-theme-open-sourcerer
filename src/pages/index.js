@@ -16,6 +16,7 @@ const IndexPage = () => {
       site {
         siteMetadata {
           blogPath
+          postPerPage
           author {
             nickName
             summary
@@ -64,7 +65,7 @@ const IndexPage = () => {
 
   const { contents = [] } = data.allYamlPage.nodes[0] || {};
   const posts = data.allMarkdownRemark.edges;
-  const { blogPath, author } = data.site.siteMetadata;
+  const { blogPath, author, postPerPage } = data.site.siteMetadata;
   const projects = contents.slice(0, 4);
 
   return (
@@ -81,9 +82,13 @@ const IndexPage = () => {
             Open Source Projects
           </Text>
           <ProjectGrid projects={projects} limit={4} />
-          <Box textAlign="center" mt={4}>
-            <LinkButton to="/projects/">See More Projects</LinkButton>
-          </Box>
+          {projects.length >= 4 ? (
+            <Box textAlign="center" mt={4}>
+              <LinkButton to="/projects/">See More Projects</LinkButton>
+            </Box>
+          ) : (
+            <></>
+          )}
         </Box>
       ) : (
         <></>
@@ -100,9 +105,13 @@ const IndexPage = () => {
               key={post.node.id}
             />
           ))}
-          <Box textAlign="center" mt={4}>
-            <LinkButton to={`/${blogPath}/`}>See More Posts</LinkButton>
-          </Box>
+          {posts.length >= postPerPage ? (
+            <Box textAlign="center" mt={4}>
+              <LinkButton to={`/${blogPath}/`}>See More Posts</LinkButton>
+            </Box>
+          ) : (
+            <></>
+          )}
         </Box>
       ) : (
         <></>

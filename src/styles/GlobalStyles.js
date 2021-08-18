@@ -94,7 +94,7 @@ const GlobalStyle = createGlobalStyle`
     h5,
     h6 {
       padding-top: 76px;
-      margin-top: -76px;
+      margin-top: -60px;
 
       .header-anchor-icon.before {
         padding-top: 76px;
