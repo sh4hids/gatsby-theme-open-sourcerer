@@ -60,7 +60,7 @@ const PostTags = ({ tags = [], blogPath = '' }) => (
       <li key={item}>
         <Link to={`/${blogPath}/tags/${toKebabCase(item)}/`}>
           <HashIcon size={20} />
-          {toTitleCase(item).replace(/\s\s+/g, ' ')}
+          {toTitleCase(item).replace(/\s\s+/g, '')}
         </Link>
       </li>
     ))}
