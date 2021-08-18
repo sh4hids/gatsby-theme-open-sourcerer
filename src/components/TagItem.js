@@ -57,7 +57,7 @@ const TagItem = ({ tag = '', totalCount = 0, ...props }) => {
     <TagWrapper {...props}>
       <Link to={`/${blogPath}/tags/${toKebabCase(tag)}/`}>
         <HashIcon size={20} />
-        <span>{toTitleCase(tag).replace(/\s\s+/g, '')}</span>
+        <span>{toTitleCase(tag).replace(/\s/g, '')}</span>
         <span className="tag-post-count">{`(${totalCount})`}</span>
       </Link>
     </TagWrapper>
