@@ -23,7 +23,7 @@ const Post = ({ pageContext, data }) => {
       }}
       description={postNode.excerpt}
     >
-      <Text variant="raw" html={postNode.html} />
+      <Text variant="raw" html={postNode.html} className="post-body" />
       <PostTags tags={post.tags || {}} blogPath={blogPath} />
       <SocialShareLinks
         title={post.title}

@@ -86,6 +86,22 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .post-body {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding-top: 76px;
+      margin-top: -76px;
+
+      .header-anchor-icon.before {
+        padding-top: 76px;
+      }
+    }
+  }
+
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
