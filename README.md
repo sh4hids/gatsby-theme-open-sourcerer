@@ -57,6 +57,19 @@ For example, if you want to shadow the `BrandLogo` component, your directory str
 
 You can shadow any component you like by following the above structure. All the components can be found in `src` dorectory of this repo.
 
+**N.B.** You might get some error while shadowing a component. This might happen if copy/paste components from this theme's `src` folder. One of the error might be:
+
+```
+Module not found: Error: Can't resolve '../components' in
+```
+
+In the above case, check if there's any relative import. If there's any, refactor the `imports` like this:
+
+```javascript
+import { Text } from '@sh4hids/gatsby-theme-open-sourcerer/src/components';
+import { DefaultLayout } from '@sh4hids/gatsby-theme-open-sourcerer/src/layouts';
+```
+
 ## Writing posts
 
 You can write blog post using `markdown` file format. Just follow this structure:
@@ -77,7 +90,7 @@ tags:
 Your post will go here...
 ```
 
-**NB** If you want to make draft post, set `isPublished` to `false` in post's frontmatter.
+**NB: If you want to make draft post, set `isPublished` to `false` in post's frontmatter. You can use [this script](https://github.com/sh4hids/shahid.pro/blob/main/scripts/create-post.js) to automate the process.**
 
 ## Customizing pages
 
@@ -95,8 +108,8 @@ Create files named `About.js`/`Contact.js` in the following directory:
 │   ├── @sh4hids
 │   │   ├── gatsby-theme-open-sourcerer
 │   │   │   ├── templates
-│   │   │   │   ├── About.mdx
-│   │   │   │   ├── Contact.mdx
+│   │   │   │   ├── About.js
+│   │   │   │   ├── Contact.js
 ```
 
 #### Page layout

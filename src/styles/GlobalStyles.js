@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    margin: 1rem 0;
+    margin: 1rem 0 2rem 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
