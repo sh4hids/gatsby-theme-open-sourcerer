@@ -1,4 +1,5 @@
 export { default as ArrowRightIcon } from './ArrowRightIcon';
+export { default as ArrowLeftIcon } from './ArrowLeftIcon';
 export { default as Box } from './Box';
 export { default as BrandLogo } from './BrandLogo';
 export { default as CalendarIcon } from './CalendarIcon';
