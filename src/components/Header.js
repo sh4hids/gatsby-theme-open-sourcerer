@@ -34,15 +34,20 @@ const HeaderContainer = styled(Container)`
 
     svg {
       position: relative;
-      top: 2px;
     }
   }
 
-  .menu-toggle-btn {
-    ${({ theme }) => `${theme.mediaQueries.sm} {
+  ${({ theme }) => `${theme.mediaQueries.sm} {
+    .theme-toggle-btn {
+      svg {
+        top: 6px;
+      }
+    }
+
+    .menu-toggle-btn {
       display: none;
-    }`};
-  }
+    }
+  }`};
 `;
 
 const Header = ({ theme, changeTheme }) => {
