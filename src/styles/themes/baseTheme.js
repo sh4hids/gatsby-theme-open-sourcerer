@@ -13,7 +13,7 @@ const mediaQueries = {
   lg: `@media only screen and (min-width : ${breakpoints[4]})`,
 };
 
-const lineHeights = [1, 1.3, 1.6];
+const lineHeights = [1, 1.3, 1.6, 2];
 const fontWeights = [400, 500, 700];
 
 const colors = {
@@ -52,8 +52,9 @@ fontSizes.h1 = fontSizes[7];
 fontSizes.display1 = fontSizes[8];
 fontSizes.display2 = fontSizes[9];
 
-lineHeights.body = lineHeights[2];
 lineHeights.heading = lineHeights[1];
+lineHeights.body = lineHeights[2];
+lineHeights.list = lineHeights[3];
 
 fontWeights.normal = fontWeights[0];
 fontWeights.medium = fontWeights[1];

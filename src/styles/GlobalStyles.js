@@ -93,7 +93,8 @@ const GlobalStyle = createGlobalStyle`
 
     li {
       font-size: ${({ theme }) => theme.fontSizes.body}px;
-      font-weight: ${({ theme }) => theme.fontWeights.medium};
+      font-weight: ${({ theme }) => theme.fontWeights.normal};
+      line-height: ${({ theme }) => theme.lineHeights.list};
 
       ::before {
         color: ${({ theme }) => theme.colors.text1};
