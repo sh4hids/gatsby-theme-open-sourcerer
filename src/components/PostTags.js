@@ -9,7 +9,7 @@ import toTitleCase from '../utils/toTitleCase';
 import HashIcon from './HashIcon';
 
 const TagListWrapper = styled.ul`
-  margin: ${({ theme }) => theme.space.xl}px 0 -16px 0;
+  margin: ${({ theme }) => theme.space.xxl}px 0 -16px 0;
   padding: 0;
   text-align: center;
 

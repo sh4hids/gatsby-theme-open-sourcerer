@@ -38,6 +38,7 @@ space.sm = space[1];
 space.md = space[2];
 space.lg = space[3];
 space.xl = space[4];
+space.xxl = space[5];
 
 fontSizes.label2 = fontSizes[0];
 fontSizes.label1 = fontSizes[1];

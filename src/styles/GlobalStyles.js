@@ -64,6 +64,18 @@ const GlobalStyle = createGlobalStyle`
       theme.name === 'dark' ? `brightness(0.8) contrast(1.2)` : ''};
   }
 
+  blockquote {
+    p {
+      margin: 0;
+    }
+
+    margin: ${({ theme }) => theme.space.lg}px 0;
+    padding: 0 ${({ theme }) => theme.space.lg}px;
+    border-left: 4px solid ${({ theme }) => theme.colors.primary0};
+    font-size: ${({ theme }) => theme.fontSizes.h5}px;
+    font-style: italic;
+    line-height: ${({ theme }) => theme.lineHeights.heading};
+  }
 
   .gatsby-highlight {
     overflow: auto;
