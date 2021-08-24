@@ -2,6 +2,8 @@
 
 A configurable minimal gatsby portfolio theme for open source developers.
 
+### [Live Demo](https://gatsby-theme-open-sourcerer.netlify.app/)
+
 ## Installing the theme
 
 1. Create a site
