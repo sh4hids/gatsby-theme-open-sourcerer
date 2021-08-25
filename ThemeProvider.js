@@ -6,7 +6,7 @@ import { SEO } from './src/components';
 export const ThemeContext = React.createContext();
 
 const Provider = ({ children }) => {
-  const config = getConfig();
+  const config = getConfig() || { theme: 'light' };
   const [theme, setTheme] = useState(config.theme);
 
   return (
