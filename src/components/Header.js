@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   position: fixed;
   width: 100%;
   z-index: 999;
+  box-shadow: ${({ theme }) => theme.elevations[0]};
 `;
 
 const HeaderContainer = styled(Container)`
