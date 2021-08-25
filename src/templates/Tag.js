@@ -15,7 +15,9 @@ const Tag = ({ data, pageContext }) => {
     <DefaultLayout
       title={toTitleCase(pageContext.tag)}
       url={`/${blogPath}/tags/${toKebabCase(pageContext.tag)}/`}
-      description={`Following are the latest posts related to the topic ${pageContext.tag.toUpperCase()}.`}
+      description={`Following are the latest posts related to the topic #${toTitleCase(
+        pageContext.tag
+      ).replace(/\s/g, '')}.`}
     >
       {posts.length ? (
         posts.map((post) => (
