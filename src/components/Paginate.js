@@ -19,7 +19,7 @@ const Wrapper = styled(Box)`
     text-align: center;
     border-radius: 8px;
     margin-right: ${({ theme }) => theme.space.lg}px;
-    background-color: ${({ theme }) => theme.colors.bg2};
+    background-color: ${({ theme }) => theme.colors.bg1};
 
     &.paginate-prev {
       padding-left: ${({ theme }) => theme.space.lg}px;
@@ -32,7 +32,7 @@ const Wrapper = styled(Box)`
     }
 
     p {
-      color: ${({ theme }) => theme.colors.text1};
+      color: ${({ theme }) => theme.colors.text0};
       font-weight: ${({ theme }) => theme.fontWeights.medium};
       display: inline-block;
       margin: 0;

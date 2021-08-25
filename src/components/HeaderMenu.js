@@ -14,11 +14,8 @@ const HeaderMenuWrapper = styled.ul`
   position: fixed;
   top: 60px;
   left: 0;
-  background-color: ${({ theme }) =>
-    theme.name === 'light' ? theme.colors.bg2 : theme.colors.bg0};
-  border-top: 1px solid
-    ${({ theme }) =>
-      theme.name === 'light' ? theme.colors.bg0 : theme.colors.bg2};
+  background-color: ${({ theme }) => theme.colors.bg1};
+  border-top: 1px solid ${({ theme }) => theme.colors.bg0};
   display: ${({ isMenuOpen }) => (isMenuOpen ? 'block' : 'none')};
 
   li {
@@ -38,17 +35,14 @@ const HeaderMenuWrapper = styled.ul`
       color: ${({ theme }) => theme.colors.text1};
       position: relative;
       z-index: 1;
-      border-bottom: 1px solid
-        ${({ theme }) =>
-          theme.name === 'light' ? theme.colors.bg0 : theme.colors.bg2};
+      border-bottom: 1px solid ${({ theme }) => theme.colors.bg0};
 
       &.active {
-        background-color: ${({ theme }) =>
-          theme.name === 'light' ? theme.colors.bg0 : theme.colors.bg2};
+        background-color: ${({ theme }) => theme.colors.bg2};
       }
 
       &:hover {
-        color: ${({ theme }) => theme.colors.primary[0]};
+        color: ${({ theme }) => theme.colors.primary0};
       }
     }
   }

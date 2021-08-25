@@ -18,8 +18,7 @@ const TagListWrapper = styled.ul`
       ${({ theme }) => theme.space.lg}px 0;
     display: inline-block;
     font-size: ${({ theme }) => theme.fontSizes.body}px;
-    background-color: ${({ theme }) =>
-      theme.name === 'light' ? theme.colors.dark[0] : theme.colors.light[0]};
+    background-color: ${({ theme }) => theme.colors.text0};
     border-radius: 8px;
     padding: 0 8px;
     transition: all ease-in-out 0.3s;
@@ -43,13 +42,11 @@ const TagListWrapper = styled.ul`
       position: relative;
       top: -2px;
       margin-left: -5px;
-      stroke: ${({ theme }) =>
-        theme.name === 'light' ? theme.colors.light[1] : theme.colors.dark[1]};
+      stroke: ${({ theme }) => theme.colors.bg1};
     }
 
     a {
-      color: ${({ theme }) =>
-        theme.name === 'light' ? theme.colors.light[1] : theme.colors.dark[1]};
+      color: ${({ theme }) => theme.colors.bg1};
     }
   }
 `;

@@ -10,8 +10,8 @@ import StarIcon from './StarIcon';
 
 const Wrapper = styled(Box)`
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.bg2};
-  color: ${({ theme }) => theme.colors.text1};
+  background-color: ${({ theme }) => theme.colors.bg1};
+  color: ${({ theme }) => theme.colors.text0};
   box-shadow: ${({ theme }) => theme.elevations[0]};
   transition: all ease-in-out 0.3s;
   min-height: 300px;
@@ -46,10 +46,10 @@ const Wrapper = styled(Box)`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.text1};
+    color: ${({ theme }) => theme.colors.text0};
+    transition: all ease-in-out 0.3s;
 
     :hover {
-      transition: all ease-in-out 0.3s;
       color: ${({ theme }) => theme.colors.primary1};
     }
   }

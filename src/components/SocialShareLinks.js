@@ -45,7 +45,7 @@ const Container = styled.ul`
       transform: translateY(-4px);
       svg {
         path {
-          fill: ${({ theme }) => theme.colors.primary[0]};
+          fill: ${({ theme }) => theme.colors.primary1};
         }
       }
     }

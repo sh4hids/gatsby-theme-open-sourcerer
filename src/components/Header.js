@@ -13,8 +13,7 @@ import MenuIcon from './MenuIcon';
 
 const Wrapper = styled.div`
   height: 60px;
-  background-color: ${({ theme }) =>
-    theme.name === 'light' ? theme.colors.bg2 : theme.colors.bg0};
+  background-color: ${({ theme }) => theme.colors.bg1};
   position: fixed;
   width: 100%;
   z-index: 999;

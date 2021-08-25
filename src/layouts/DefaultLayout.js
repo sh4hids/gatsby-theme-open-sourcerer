@@ -18,7 +18,7 @@ const DefaultLayout = ({
   postMeta,
 }) => (
   <ThemeContext.Consumer>
-    {(context = { theme: 'light' }) => (
+    {(context) => (
       <ThemeProvider theme={themes[context.theme]}>
         <SEO
           title={toTitleCase(title)}

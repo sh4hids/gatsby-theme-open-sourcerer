@@ -8,20 +8,22 @@ export const setConfig = (data) => {
 
 export const getConfig = () => {
   if (isBrowser) {
-    let systemTheme = 'light';
+    let config = JSON.parse(window.localStorage.getItem('config'));
 
-    if (
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    ) {
-      systemTheme = 'dark';
+    if (!config) {
+      if (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        config = { theme: 'dark' };
+      } else {
+        config = { theme: 'light' };
+      }
+
+      setConfig(config);
     }
 
-    return (
-      JSON.parse(window.localStorage.getItem('config')) || {
-        theme: systemTheme,
-      }
-    );
+    return config;
   }
 
   return {

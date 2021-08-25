@@ -11,8 +11,8 @@ import ArrowRightIcon from './ArrowRightIcon';
 
 const Wrapper = styled(Box)`
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.bg2};
-  color: ${({ theme }) => theme.colors.text1};
+  background-color: ${({ theme }) => theme.colors.bg1};
+  color: ${({ theme }) => theme.colors.text0};
   box-shadow: ${({ theme }) => theme.elevations[0]};
 
   :hover {
