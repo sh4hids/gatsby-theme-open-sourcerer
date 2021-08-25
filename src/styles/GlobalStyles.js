@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${({ theme }) => theme.colors.bg1};
+    background-color: ${({ theme }) => theme.colors.bg0};
     color: ${({ theme }) => theme.colors.text0};
     font-family: ${({ theme }) => theme.fonts.body};
     font-size: ${({ theme }) => theme.fontSizes.body}px;
@@ -51,11 +51,11 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.primary[1]};
+    color: ${({ theme }) => theme.colors.primary1};
+    transition: all ease-in-out 0.3s;
 
     &:hover {
-      transition: all ease-in-out 0.3s;
-      color: ${({ theme }) => theme.colors.primary[0]};
+      color: ${({ theme }) => theme.colors.primary0};
     }
   }
 
@@ -97,7 +97,7 @@ const GlobalStyle = createGlobalStyle`
       line-height: ${({ theme }) => theme.lineHeights.list};
 
       ::before {
-        color: ${({ theme }) => theme.colors.text1};
+        color: ${({ theme }) => theme.colors.text0};
         content: '⧉';
         margin-right: ${({ theme }) => theme.space.md}px;
       }
@@ -129,7 +129,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-track {
-    background-color: ${({ theme }) => theme.colors.bg2};
+    background-color: ${({ theme }) => theme.colors.bg1};
   }
 
   ::-webkit-scrollbar-thumb {
