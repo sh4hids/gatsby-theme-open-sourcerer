@@ -11,15 +11,7 @@ export const getConfig = () => {
     let config = JSON.parse(window.localStorage.getItem('config'));
 
     if (!config) {
-      if (
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-      ) {
-        config = { theme: 'dark' };
-      } else {
-        config = { theme: 'light' };
-      }
-
+      config = { theme: 'light' };
       setConfig(config);
     }
 
