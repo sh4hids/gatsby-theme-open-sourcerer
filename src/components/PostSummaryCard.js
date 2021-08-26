@@ -81,7 +81,7 @@ const PostSummaryCard = ({ post, blogPath }) => (
         to={`/${urljoin(blogPath, post.node.fields.slug)}`}
         aria-label={post.node.frontmatter.title}
       >
-        <span>Read More</span>
+        <span>Read</span>
         <ArrowRightIcon stroke="primary1" />
       </Link>
     </Text>
