@@ -51,7 +51,12 @@ const Wrapper = styled(Box)`
     }
 
     span {
-      margin-right: ${({ theme }) => theme.space.md}px;
+      margin-right: ${({ theme }) => theme.space.sm}px;
+    }
+
+    svg {
+      position: relative;
+      top: --1px;
     }
   }
 `;
@@ -72,7 +77,10 @@ const PostSummaryCard = ({ post, blogPath }) => (
     />
     <Text>{post.node.excerpt}</Text>
     <Text variant="h5" className="read-more-btn">
-      <Link to={`/${urljoin(blogPath, post.node.fields.slug)}`}>
+      <Link
+        to={`/${urljoin(blogPath, post.node.fields.slug)}`}
+        aria-label={post.node.frontmatter.title}
+      >
         <span>Read More</span>
         <ArrowRightIcon stroke="primary1" />
       </Link>

@@ -74,6 +74,7 @@ const Header = ({ theme, changeTheme }) => {
             role="button"
             tabIndex="0"
             className="theme-toggle-btn"
+            aria-label="theme-toggle-button"
           >
             {theme === 'light' ? <MoonIcon /> : <SunIcon />}
           </span>
@@ -83,6 +84,7 @@ const Header = ({ theme, changeTheme }) => {
             role="button"
             tabIndex="0"
             className="menu-toggle-btn"
+            aria-label="menu-button"
           >
             <MenuIcon />
           </span>

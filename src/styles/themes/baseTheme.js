@@ -19,7 +19,7 @@ const fontWeights = [400, 500, 700];
 const colors = {
   primary: ['#1E8BB8', '#21AAE2', '#5CC7EB'],
   dark: ['#191924', '#27283F', '#53556E'],
-  light: ['#E7E7EE', '#F6F6F9', '#FFFFFF'],
+  light: ['#EDEDF2', '#F6F6F9', '#FFFFFF'],
   success: ['#04A660', '#07C270', '#3ADA8A'],
   error: ['#BE1918', '#F43A3C', '#F56161'],
   warning: ['#E27A00', '#FF8E00', '#FDA642'],
