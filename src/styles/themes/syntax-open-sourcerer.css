@@ -59,15 +59,15 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  color: #191924;
-  background: rgba(39, 40, 63, 0.92);
+  color: #f6f6f9;
+  background: rgba(39, 40, 63, 0.96);
 }
 
 :not(pre) > code[class*='language-'] {
   padding: 0.1em 0.3em 0.2em 0.3em;
   border-radius: 0.3em;
   white-space: normal;
-  background: rgba(83, 85, 110, 0.6);
+  background: rgba(78, 78, 108, 0.6);
 }
 
 .token.comment,
