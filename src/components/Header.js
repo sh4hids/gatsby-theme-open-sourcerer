@@ -50,7 +50,7 @@ const HeaderContainer = styled(Container)`
   }`};
 `;
 
-const Header = ({ theme, changeTheme }) => {
+const Header = ({ theme, changeTheme, colorMode, setColorMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const data = useStaticQuery(graphql`
     query {
@@ -69,7 +69,10 @@ const Header = ({ theme, changeTheme }) => {
         <Box display="flex">
           <HeaderMenu isMenuOpen={isMenuOpen} />
           <span
-            onClick={() => changeTheme(theme === 'light' ? 'dark' : 'light')}
+            onClick={() => {
+              changeTheme(theme === 'light' ? 'dark' : 'light');
+              setColorMode(colorMode === 'light' ? 'dark' : 'light');
+            }}
             onKeyDown={() => {}}
             role="button"
             tabIndex="0"
@@ -97,6 +100,8 @@ const Header = ({ theme, changeTheme }) => {
 Header.propTypes = {
   theme: PropTypes.string.isRequired,
   changeTheme: PropTypes.func.isRequired,
+  colorMode: PropTypes.string.isRequired,
+  setColorMode: PropTypes.func.isRequired,
 };
 
 export default Header;

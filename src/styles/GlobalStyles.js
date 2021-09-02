@@ -8,8 +8,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${({ theme }) => theme.colors.bg0};
-    color: ${({ theme }) => theme.colors.text0};
+    background-color: var(--color-bg-0);
+    color: var(--color-text-0);
     font-family: ${({ theme }) => theme.fonts.body};
     font-size: ${({ theme }) => theme.fontSizes.body}px;
     line-height: ${({ theme }) => theme.lineHeights.body};
@@ -51,11 +51,11 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.primary1};
+    color: var(--color-primary-1);
     transition: all ease-in-out 0.3s;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.primary0};
+      color: var(--color-primary-0);
     }
   }
 
@@ -97,7 +97,7 @@ const GlobalStyle = createGlobalStyle`
       line-height: ${({ theme }) => theme.lineHeights.list};
 
       ::before {
-        color: ${({ theme }) => theme.colors.text0};
+        color: var(--color-text-0);
         content: '⧉';
         margin-right: ${({ theme }) => theme.space.md}px;
       }
@@ -129,21 +129,21 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-track {
-    background-color: ${({ theme }) => theme.colors.bg1};
+    background-color: var(--color-bg-1);
   }
 
   ::-webkit-scrollbar-thumb {
     cursor: pointer;
-    background-color: ${({ theme }) => theme.colors.primary0};
+    background-color: var(--color-primary-0);
     transition: all ease-in-out 0.3s;
 
     
     :hover {
-      background-color: ${({ theme }) => theme.colors.primary1};
+      background-color: var(--color-primary-1);
     }
     
     :active {
-      background-color: ${({ theme }) => theme.colors.primary2};
+      background-color: var(--color-primary-2);
     }
   }
 `;

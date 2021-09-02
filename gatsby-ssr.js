@@ -3,12 +3,11 @@ import React from 'react';
 
 import ThemeProvider from './ThemeProvider';
 import theme from './src/styles/theme';
-import { COLOR_MODE_KEY, CSS_COLOR_MODE_KEY } from './src/config/constants';
 
 function setColorsByTheme() {
   const colors = '🌈';
-  const colorModeKey = COLOR_MODE_KEY;
-  const colorModeCssProp = CSS_COLOR_MODE_KEY;
+  const colorModeKey = 'color-mode';
+  const colorModeCssProp = '--initial-color-mode';
 
   const mql = window.matchMedia('(prefers-color-scheme: dark)');
   const prefersDarkFromMQ = mql.matches;

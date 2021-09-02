@@ -19,6 +19,8 @@ const DefaultLayout = ({
 }) => {
   const context = useContext(ThemeContext);
 
+  console.log(context);
+
   return (
     <ThemeProvider theme={themes[context.theme]}>
       <GlobalStyle />
@@ -28,7 +30,12 @@ const DefaultLayout = ({
         url={url}
         image={image}
       />
-      <Header theme={context.theme} changeTheme={context.changeTheme} />
+      <Header
+        theme={context.theme}
+        changeTheme={context.changeTheme}
+        colorMode={context.colorMode}
+        setColorMode={context.setColorMode}
+      />
       <HeroSection
         title={heroTitle || toTitleCase(title)}
         description={description}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { COLOR_MODE_KEY, CSS_COLOR_MODE_KEY } from './src/config/constants';
 import { getConfig, setConfig } from './src/services/ConfigServices';
 import { SEO } from './src/components';
 import theme from './src/styles/theme';
@@ -18,7 +17,9 @@ const Provider = ({ children }) => {
     const root = window.document.documentElement;
 
     const initialColorValue =
-      root.style.getPropertyValue(CSS_COLOR_MODE_KEY) || 'light';
+      root.style.getPropertyValue('--initial-color-mode') || 'light';
+
+    console.log(initialColorValue);
 
     rawSetColorMode(initialColorValue);
   }, []);
@@ -27,7 +28,7 @@ const Provider = ({ children }) => {
     function setColorMode(newValue) {
       const root = window.document.documentElement;
 
-      localStorage.setItem(COLOR_MODE_KEY, newValue);
+      localStorage.setItem('color-mode', newValue);
 
       if (newValue === 'dark') {
         theme.colors.light.forEach((color, index) => {
