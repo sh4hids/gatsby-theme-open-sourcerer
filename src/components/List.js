@@ -15,7 +15,7 @@ const ListItem = styled.li`
   font-weight: ${({ theme }) => theme.fontWeights.medium};
 
   ::before {
-    color: ${({ theme }) => theme.colors.text0};
+    color: var(--color-text-0);
     content: '⧉';
     margin-right: ${({ theme }) => theme.space.md}px;
   }

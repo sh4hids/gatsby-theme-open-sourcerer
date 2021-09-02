@@ -11,8 +11,8 @@ import ArrowRightIcon from './ArrowRightIcon';
 
 const Wrapper = styled(Box)`
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.bg1};
-  color: ${({ theme }) => theme.colors.text0};
+  background-color: var(--color-bg-1);
+  color: var(--color-text-0);
   box-shadow: ${({ theme }) => theme.elevations[0]};
 
   :hover {
@@ -33,7 +33,7 @@ const Wrapper = styled(Box)`
     h3 {
       :hover {
         transition: all ease-in-out 0.3s;
-        color: ${({ theme }) => theme.colors.primary[1]};
+        color: var(--color-primary-1);
       }
     }
   }
@@ -43,10 +43,10 @@ const Wrapper = styled(Box)`
     font-weight: ${({ theme }) => theme.fontWeights.medium};
 
     a {
-      color: ${({ theme }) => theme.colors.text1};
+      color: var(--color-text-1);
 
       :hover {
-        color: ${({ theme }) => theme.colors.primary[1]};
+        color: var(--color-primary-1);
       }
     }
 

@@ -19,7 +19,7 @@ const Wrapper = styled(Box)`
     text-align: center;
     border-radius: 8px;
     margin-right: ${({ theme }) => theme.space.lg}px;
-    background-color: ${({ theme }) => theme.colors.bg1};
+    background-color: var(--color-bg-1);
 
     &.paginate-prev {
       padding-left: ${({ theme }) => theme.space.lg}px;
@@ -32,7 +32,7 @@ const Wrapper = styled(Box)`
     }
 
     p {
-      color: ${({ theme }) => theme.colors.text0};
+      color: var(--color-text-0);
       font-weight: ${({ theme }) => theme.fontWeights.medium};
       display: inline-block;
       margin: 0;
@@ -50,7 +50,7 @@ const Wrapper = styled(Box)`
 
     :hover {
       transition: all ease-in-out 0.3s;
-      background-color: ${({ theme }) => theme.colors.primary1};
+      background-color: var(--color-primary-1);
       box-shadow: ${({ theme }) => theme.elevations[2]};
     }
   }

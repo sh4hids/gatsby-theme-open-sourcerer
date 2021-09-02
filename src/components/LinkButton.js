@@ -4,8 +4,8 @@ import { space, color, typography, layout } from 'styled-system';
 
 const LinkButton = styled(Link)`
   padding: ${({ theme }) => theme.space.md}px ${({ theme }) => theme.space.lg}px;
-  background-color: ${({ theme }) => theme.colors.bg1};
-  color: ${({ theme }) => theme.colors.text0};
+  background-color: var(--color-bg-1);
+  color: var(--color-text-0);
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   border-radius: 8px;
   text-transform: uppercase;

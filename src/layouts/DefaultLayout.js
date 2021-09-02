@@ -19,8 +19,6 @@ const DefaultLayout = ({
 }) => {
   const context = useContext(ThemeContext);
 
-  console.log(context);
-
   return (
     <ThemeProvider theme={themes[context.theme]}>
       <GlobalStyle />

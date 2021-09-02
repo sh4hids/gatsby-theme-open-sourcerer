@@ -17,8 +17,8 @@ const TagWrapper = styled(Box)`
     padding: ${({ theme }) => theme.space.lg}px 0;
     display: inline-block;
     font-size: ${({ theme }) => theme.fontSizes.body}px;
-    background-color: ${({ theme }) => theme.colors.bg1};
-    color: ${({ theme }) => theme.colors.text0};
+    background-color: var(--color-bg-1);
+    color: var(--color-text-0);
     border-radius: 8px;
     box-shadow: ${({ theme }) => theme.elevations[0]};
     transition: all ease-in-out 0.3s;
@@ -33,8 +33,8 @@ const TagWrapper = styled(Box)`
     }
 
     :hover {
-      color: ${({ theme }) => theme.colors.text0};
-      background-color: ${({ theme }) => theme.colors.primary1};
+      color: var(--color-text-0);
+      background-color: var(--color-primary-1);
       box-shadow: ${({ theme }) => theme.elevations[2]};
     }
   }

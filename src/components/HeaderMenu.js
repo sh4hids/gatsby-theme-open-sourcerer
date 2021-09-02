@@ -14,8 +14,9 @@ const HeaderMenuWrapper = styled.ul`
   position: fixed;
   top: 60px;
   left: 0;
-  background-color: ${({ theme }) => theme.colors.bg1};
-  border-top: 1px solid ${({ theme }) => theme.colors.bg0};
+  background-color: var(--color-bg-1);
+  color: var(--color-text-0);
+  border-top: 1px solid var(--color-bg-0);
   display: ${({ isMenuOpen }) => (isMenuOpen ? 'block' : 'none')};
 
   li {
@@ -32,17 +33,17 @@ const HeaderMenuWrapper = styled.ul`
       width: 100%;
       padding: ${({ theme }) => theme.space.lg}px;
       font-size: ${({ theme }) => theme.fontSizes.h5}px;
-      color: ${({ theme }) => theme.colors.text1};
+      color: var(--color-text-1);
       position: relative;
       z-index: 1;
-      border-bottom: 1px solid ${({ theme }) => theme.colors.bg0};
+      border-bottom: 1px solid var(--color-bg-0);
 
       &.active {
-        background-color: ${({ theme }) => theme.colors.bg2};
+        background-color: var(--color-bg-2);
       }
 
       &:hover {
-        color: ${({ theme }) => theme.colors.primary0};
+        color: var(--color-primary-0);
       }
     }
   }

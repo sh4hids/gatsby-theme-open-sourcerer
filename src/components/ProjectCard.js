@@ -10,8 +10,8 @@ import StarIcon from './StarIcon';
 
 const Wrapper = styled(Box)`
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.bg1};
-  color: ${({ theme }) => theme.colors.text0};
+  background-color: var(--color-bg-1);
+  color: var(--color-text-0);
   box-shadow: ${({ theme }) => theme.elevations[0]};
   transition: all ease-in-out 0.3s;
   min-height: 300px;
@@ -46,17 +46,18 @@ const Wrapper = styled(Box)`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.text0};
+    color: var(--color-text-0);
     transition: all ease-in-out 0.3s;
 
     :hover {
-      color: ${({ theme }) => theme.colors.primary1};
+      color: var(--color-primary-1);
     }
   }
 `;
 
 const ProjectCard = ({ project, ...props }) => {
   const [starsCount, setStarsCount] = useState(0);
+
   useEffect(async () => {
     const response = await fetch(
       `https://api.github.com/repos/${project.githubRepo}`

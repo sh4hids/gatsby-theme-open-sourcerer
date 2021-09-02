@@ -22,7 +22,8 @@ const formatLinks = (links = {}) => {
 };
 
 const Wrapper = styled(Box)`
-  background-color: ${({ theme }) => theme.colors.bg1};
+  background-color: var(--color-bg-1);
+  color: var(--color-text-0);
   box-shadow: ${({ theme }) => theme.elevations[0]};
 
   h1,

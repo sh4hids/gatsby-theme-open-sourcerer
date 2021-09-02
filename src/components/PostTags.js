@@ -18,7 +18,7 @@ const TagListWrapper = styled.ul`
       ${({ theme }) => theme.space.lg}px 0;
     display: inline-block;
     font-size: ${({ theme }) => theme.fontSizes.body}px;
-    background-color: ${({ theme }) => theme.colors.text0};
+    background-color: var(--color-text-0);
     border-radius: 8px;
     padding: 0 8px;
     transition: all ease-in-out 0.3s;
@@ -26,7 +26,7 @@ const TagListWrapper = styled.ul`
 
     :hover {
       opacity: 1;
-      background-color: ${({ theme }) => theme.colors.primary1};
+      background-color: var(--color-primary-1);
     }
 
     ::before {
@@ -42,11 +42,11 @@ const TagListWrapper = styled.ul`
       position: relative;
       top: -2px;
       margin-left: -5px;
-      stroke: ${({ theme }) => theme.colors.bg1};
+      stroke: var(--color-bg-1);
     }
 
     a {
-      color: ${({ theme }) => theme.colors.bg1};
+      color: var(--color-bg-1);
     }
   }
 `;

@@ -34,11 +34,11 @@ const SocialLinksWrapper = styled.ul`
     }
 
     a {
-      color: ${({ theme }) => theme.colors.text0};
+      color: var(--color-text-0);
       transition: all ease-in-out 0.3s;
 
       &:hover {
-        color: ${({ theme }) => theme.colors.primary1};
+        color: var(--color-primary-1);
       }
     }
   }
