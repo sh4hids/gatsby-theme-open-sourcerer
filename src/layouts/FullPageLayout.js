@@ -12,7 +12,7 @@ const FullPageLayout = ({ children, title, description, url, image }) => {
   const context = useContext(ThemeContext);
 
   return (
-    <ThemeProvider theme={themes[context.theme]}>
+    <ThemeProvider theme={themes[context.colorMode]}>
       <SEO
         title={toTitleCase(title)}
         description={description}

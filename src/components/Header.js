@@ -51,7 +51,7 @@ const HeaderContainer = styled(Container)`
   }`};
 `;
 
-const Header = ({ theme, changeTheme, colorMode, setColorMode }) => {
+const Header = ({ colorMode, setColorMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const data = useStaticQuery(graphql`
     query {
@@ -71,7 +71,6 @@ const Header = ({ theme, changeTheme, colorMode, setColorMode }) => {
           <HeaderMenu isMenuOpen={isMenuOpen} />
           <span
             onClick={() => {
-              changeTheme(theme === 'light' ? 'dark' : 'light');
               setColorMode(colorMode === 'light' ? 'dark' : 'light');
             }}
             onKeyDown={() => {}}
@@ -80,7 +79,7 @@ const Header = ({ theme, changeTheme, colorMode, setColorMode }) => {
             className="theme-toggle-btn"
             aria-label="theme-toggle-button"
           >
-            {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
           </span>
           <span
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -99,8 +98,6 @@ const Header = ({ theme, changeTheme, colorMode, setColorMode }) => {
 };
 
 Header.propTypes = {
-  theme: PropTypes.string.isRequired,
-  changeTheme: PropTypes.func.isRequired,
   colorMode: PropTypes.string.isRequired,
   setColorMode: PropTypes.func.isRequired,
 };

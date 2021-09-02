@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { getConfig, setConfig } from './src/services/ConfigServices';
 import { SEO } from './src/components';
 import theme from './src/styles/theme';
 
 export const ThemeContext = React.createContext();
 
 const Provider = ({ children }) => {
-  const config = getConfig() || { theme: 'light' };
-  const [userTheme, setUserTheme] = useState(config.theme);
-
   const [colorMode, rawSetColorMode] = useState('light');
 
   useEffect(() => {
@@ -18,8 +14,6 @@ const Provider = ({ children }) => {
 
     const initialColorValue =
       root.style.getPropertyValue('--initial-color-mode') || 'light';
-
-    console.log(initialColorValue);
 
     rawSetColorMode(initialColorValue);
   }, []);
@@ -66,11 +60,6 @@ const Provider = ({ children }) => {
   return (
     <ThemeContext.Provider
       value={{
-        theme: userTheme,
-        changeTheme: (selectedTheme) => {
-          setConfig({ ...config, theme: selectedTheme });
-          return setUserTheme(selectedTheme);
-        },
         ...contextValue,
       }}
     >

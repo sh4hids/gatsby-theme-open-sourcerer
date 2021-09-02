@@ -20,7 +20,7 @@ const DefaultLayout = ({
   const context = useContext(ThemeContext);
 
   return (
-    <ThemeProvider theme={themes[context.theme]}>
+    <ThemeProvider theme={themes[context.colorMode]}>
       <GlobalStyle />
       <SEO
         title={toTitleCase(title)}
@@ -29,8 +29,6 @@ const DefaultLayout = ({
         image={image}
       />
       <Header
-        theme={context.theme}
-        changeTheme={context.changeTheme}
         colorMode={context.colorMode}
         setColorMode={context.setColorMode}
       />
