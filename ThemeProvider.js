@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { SEO } from './src/components';
-import theme from './src/styles/theme';
+import { baseTheme as theme } from './src/styles/themes';
 
 export const ThemeContext = React.createContext();
 

@@ -23,9 +23,6 @@ const colors = {
   success: ['#04A660', '#07C270', '#3ADA8A'],
   error: ['#BE1918', '#F43A3C', '#F56161'],
   warning: ['#E27A00', '#FF8E00', '#FDA642'],
-  elevation: {
-    dark: ['#2B2C46', '#2D2E49', '#2F304C'],
-  },
 };
 
 const elevations = [
@@ -59,16 +56,6 @@ lineHeights.list = lineHeights[3];
 fontWeights.normal = fontWeights[0];
 fontWeights.medium = fontWeights[1];
 fontWeights.bold = fontWeights[2];
-
-colors.primary0 = colors.primary[0];
-colors.primary1 = colors.primary[1];
-colors.primary2 = colors.primary[2];
-colors.bg0 = colors.light[0];
-colors.bg1 = colors.light[1];
-colors.bg2 = colors.light[2];
-colors.text0 = colors.dark[0];
-colors.text1 = colors.dark[1];
-colors.text2 = colors.dark[2];
 
 const baseTheme = {
   space,

@@ -2,7 +2,7 @@
 import React from 'react';
 
 import ThemeProvider from './ThemeProvider';
-import theme from './src/styles/theme';
+import { baseTheme as theme } from './src/styles/themes';
 
 function setColorsByTheme() {
   const colors = '🌈';
