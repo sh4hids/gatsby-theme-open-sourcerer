@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
@@ -16,29 +16,29 @@ const DefaultLayout = ({
   url,
   image,
   postMeta,
-}) => (
-  <ThemeContext.Consumer>
-    {(context = { theme: 'light' }) => (
-      <ThemeProvider theme={themes[context.theme]}>
-        <SEO
-          title={toTitleCase(title)}
-          description={description}
-          url={url}
-          image={image}
-        />
-        <GlobalStyle />
-        <Header theme={context.theme} changeTheme={context.changeTheme} />
-        <HeroSection
-          title={heroTitle || toTitleCase(title)}
-          description={description}
-          postMeta={postMeta}
-        />
-        <Container p={3}>{children}</Container>
-        <Footer />
-      </ThemeProvider>
-    )}
-  </ThemeContext.Consumer>
-);
+}) => {
+  const context = useContext(ThemeContext);
+
+  return (
+    <ThemeProvider theme={themes[context.theme]}>
+      <GlobalStyle />
+      <SEO
+        title={toTitleCase(title)}
+        description={description}
+        url={url}
+        image={image}
+      />
+      <Header theme={context.theme} changeTheme={context.changeTheme} />
+      <HeroSection
+        title={heroTitle || toTitleCase(title)}
+        description={description}
+        postMeta={postMeta}
+      />
+      <Container p={3}>{children}</Container>
+      <Footer />
+    </ThemeProvider>
+  );
+};
 
 DefaultLayout.defaultProps = {
   title: '',
