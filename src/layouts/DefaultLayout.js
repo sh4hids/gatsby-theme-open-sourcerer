@@ -18,9 +18,10 @@ const DefaultLayout = ({
   postMeta,
 }) => {
   const context = useContext(ThemeContext);
+  const selectedTheme = context.colorMode || 'light';
 
   return (
-    <ThemeProvider theme={themes[context.colorMode]}>
+    <ThemeProvider theme={themes[selectedTheme]}>
       <GlobalStyle />
       <SEO
         title={toTitleCase(title)}

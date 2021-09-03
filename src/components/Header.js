@@ -71,7 +71,7 @@ const Header = ({ colorMode, setColorMode }) => {
           <HeaderMenu isMenuOpen={isMenuOpen} />
           <span
             onClick={() => {
-              setColorMode(colorMode === 'light' ? 'dark' : 'light');
+              setColorMode(colorMode === 'dark' ? 'light' : 'dark');
             }}
             onKeyDown={() => {}}
             role="button"
@@ -79,7 +79,11 @@ const Header = ({ colorMode, setColorMode }) => {
             className="theme-toggle-btn"
             aria-label="theme-toggle-button"
           >
-            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+            {colorMode ? (
+              <>{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}</>
+            ) : (
+              <Box width={24} height={24} />
+            )}
           </span>
           <span
             onClick={() => setIsMenuOpen(!isMenuOpen)}

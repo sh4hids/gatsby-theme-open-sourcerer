@@ -10,9 +10,10 @@ import toTitleCase from '../utils/toTitleCase';
 
 const FullPageLayout = ({ children, title, description, url, image }) => {
   const context = useContext(ThemeContext);
+  const selectedTheme = context.colorMode || 'light';
 
   return (
-    <ThemeProvider theme={themes[context.colorMode]}>
+    <ThemeProvider theme={themes[selectedTheme]}>
       <SEO
         title={toTitleCase(title)}
         description={description}

@@ -7,13 +7,14 @@ import { baseTheme as theme } from './src/styles/themes';
 export const ThemeContext = React.createContext();
 
 const Provider = ({ children }) => {
-  const [colorMode, rawSetColorMode] = useState('light');
+  const [colorMode, rawSetColorMode] = useState(undefined);
 
   useEffect(() => {
     const root = window.document.documentElement;
 
-    const initialColorValue =
-      root.style.getPropertyValue('--initial-color-mode') || 'light';
+    const initialColorValue = root.style.getPropertyValue(
+      '--initial-color-mode'
+    );
 
     rawSetColorMode(initialColorValue);
   }, []);
