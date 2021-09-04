@@ -37,7 +37,9 @@ const Provider = ({ children }) => {
           root.style.setProperty(cssVarName, color);
         });
         theme.colors.primary.forEach((color, index) => {
-          const cssVarName = `--color-accent-${theme.colors.primary.length - (index + 1)}`;
+          const cssVarName = `--color-accent-${
+            theme.colors.primary.length - (index + 1)
+          }`;
 
           root.style.setProperty(cssVarName, color);
         });

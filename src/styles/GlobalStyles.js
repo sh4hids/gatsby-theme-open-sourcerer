@@ -61,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
 
   img {
     filter: ${({ theme }) =>
-    theme.name === 'dark' ? `brightness(0.8) contrast(1.2)` : ''};
+      theme.name === 'dark' ? `brightness(0.8) contrast(1.2)` : ''};
   }
 
   blockquote {

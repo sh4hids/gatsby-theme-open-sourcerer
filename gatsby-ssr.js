@@ -47,7 +47,9 @@ function setColorsByTheme() {
       root.style.setProperty(cssVarName, color);
     });
     colors.primary.forEach((color, index) => {
-      const cssVarName = `--color-accent-${colors.primary.length - (index + 1)}`;
+      const cssVarName = `--color-accent-${
+        colors.primary.length - (index + 1)
+      }`;
 
       root.style.setProperty(cssVarName, color);
     });
@@ -87,8 +89,9 @@ const FallbackStyles = () => {
 
   Object.entries(theme.colors).forEach(([name, values], nameIndex) => {
     values.forEach((color, index) => {
-      colorString += `${nameIndex === 0 && index === 0 ? '' : '\n'
-        }--color-${name}-${index}: ${color};`;
+      colorString += `${
+        nameIndex === 0 && index === 0 ? '' : '\n'
+      }--color-${name}-${index}: ${color};`;
     });
   });
 
