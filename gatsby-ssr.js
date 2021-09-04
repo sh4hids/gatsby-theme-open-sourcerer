@@ -46,6 +46,11 @@ function setColorsByTheme() {
 
       root.style.setProperty(cssVarName, color);
     });
+    colors.primary.forEach((color, index) => {
+      const cssVarName = `--color-accent-${colors.primary.length - (index + 1)}`;
+
+      root.style.setProperty(cssVarName, color);
+    });
   } else {
     colors.light.forEach((color, index) => {
       const cssVarName = `--color-bg-${index}`;
@@ -54,6 +59,11 @@ function setColorsByTheme() {
     });
     colors.dark.forEach((color, index) => {
       const cssVarName = `--color-text-${index}`;
+
+      root.style.setProperty(cssVarName, color);
+    });
+    colors.primary.forEach((color, index) => {
+      const cssVarName = `--color-accent-${index}`;
 
       root.style.setProperty(cssVarName, color);
     });
@@ -77,9 +87,8 @@ const FallbackStyles = () => {
 
   Object.entries(theme.colors).forEach(([name, values], nameIndex) => {
     values.forEach((color, index) => {
-      colorString += `${
-        nameIndex === 0 && index === 0 ? '' : '\n'
-      }--color-${name}-${index}: ${color};`;
+      colorString += `${nameIndex === 0 && index === 0 ? '' : '\n'
+        }--color-${name}-${index}: ${color};`;
     });
   });
 
@@ -97,8 +106,8 @@ const FallbackStyles = () => {
 };
 
 export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
-  setHeadComponents(<FallbackStyles />);
-  setPreBodyComponents(<MagicScriptTag />);
+  setHeadComponents(<FallbackStyles key="theme-colors-fallback" />);
+  setPreBodyComponents(<MagicScriptTag key="theme-colors" />);
 };
 
 export const wrapRootElement = ThemeProvider;
