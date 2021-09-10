@@ -77,7 +77,9 @@ const Footer = () => {
             <Text>{footer.description}</Text>
           </Box>
           <Box width={[1, 1, 1 / 2]} p={3}>
-            <Text variant="h6">Social Links</Text>
+            <Text fontSize="h6" fontWeight="bold" lineHeight="heading">
+              Social Links
+            </Text>
             <SocialLinks links={socialLinks} />
           </Box>
           <Box width={1} p={3}>
