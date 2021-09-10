@@ -102,7 +102,7 @@ const Header = ({ colorMode, setColorMode }) => {
 };
 
 Header.propTypes = {
-  colorMode: PropTypes.string.isRequired,
+  colorMode: PropTypes.string,
   setColorMode: PropTypes.func.isRequired,
 };
 

@@ -51,11 +51,11 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: var(--color-primary-1);
+    color: var(--color-accent-0);
     transition: all ease-in-out 0.3s;
 
     &:hover {
-      color: var(--color-primary-0);
+      color: var(--color-accent-1);
     }
   }
 
@@ -134,16 +134,16 @@ const GlobalStyle = createGlobalStyle`
 
   ::-webkit-scrollbar-thumb {
     cursor: pointer;
-    background-color: var(--color-primary-0);
+    background-color: var(--color-accent-0);
     transition: all ease-in-out 0.3s;
 
     
     :hover {
-      background-color: var(--color-primary-1);
+      background-color: var(--color-accent-1);
     }
     
     :active {
-      background-color: var(--color-primary-2);
+      background-color: var(--color-accent-2);
     }
   }
 `;

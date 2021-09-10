@@ -36,6 +36,13 @@ const Provider = ({ children }) => {
 
           root.style.setProperty(cssVarName, color);
         });
+        theme.colors.primary.forEach((color, index) => {
+          const cssVarName = `--color-accent-${
+            theme.colors.primary.length - (index + 1)
+          }`;
+
+          root.style.setProperty(cssVarName, color);
+        });
       } else {
         theme.colors.light.forEach((color, index) => {
           const cssVarName = `--color-bg-${index}`;
@@ -44,6 +51,11 @@ const Provider = ({ children }) => {
         });
         theme.colors.dark.forEach((color, index) => {
           const cssVarName = `--color-text-${index}`;
+
+          root.style.setProperty(cssVarName, color);
+        });
+        theme.colors.primary.forEach((color, index) => {
+          const cssVarName = `--color-accent-${index}`;
 
           root.style.setProperty(cssVarName, color);
         });

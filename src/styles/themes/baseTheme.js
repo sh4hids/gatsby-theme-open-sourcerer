@@ -17,7 +17,7 @@ const lineHeights = [1, 1.3, 1.6, 2];
 const fontWeights = [400, 500, 700];
 
 const colors = {
-  primary: ['#1E8BB8', '#21AAE2', '#5CC7EB'],
+  primary: ['#207490', '#21AAE2', '#5CC7EB'],
   dark: ['#191924', '#27283F', '#53556E'],
   light: ['#EDEDF2', '#F6F6F9', '#FFFFFF'],
   success: ['#04A660', '#07C270', '#3ADA8A'],
