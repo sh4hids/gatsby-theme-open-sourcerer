@@ -1,8 +1,10 @@
 # gatsby-theme-open-sourcerer
 
-A configurable minimal gatsby portfolio theme for open source developers.
+A configurable and performant minimal gatsby portfolio theme for open source developers.
 
 ### [Live Demo](https://gatsby-theme-open-sourcerer.netlify.app/)
+
+![gatsby-theme-open-sourcerer](./screenshots/gatsby-theme-open-sourcerer.png)
 
 ## Installing the theme
 
@@ -134,6 +136,10 @@ Example:
 ```javascript
 import { Box } from '@shahids/gatsby-theme-open-sourcerer/src/components';
 ```
+
+## Performance
+
+![Performance](./screenshots/performance.png)
 
 ## Want to help?
 
