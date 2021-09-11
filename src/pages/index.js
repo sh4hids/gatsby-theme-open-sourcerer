@@ -44,6 +44,7 @@ const IndexPage = () => {
         limit: 4
         filter: { frontmatter: { isPublished: { eq: true } } }
       ) {
+        totalCount
         edges {
           node {
             id
@@ -65,8 +66,9 @@ const IndexPage = () => {
 
   const { contents = [] } = data.allYamlPage.nodes[0] || {};
   const posts = data.allMarkdownRemark.edges;
-  const { blogPath, author, postPerPage } = data.site.siteMetadata;
+  const { blogPath, author } = data.site.siteMetadata;
   const projects = contents.slice(0, 4);
+  const totalPosts = data.allMarkdownRemark.totalCount || 0;
 
   return (
     <DefaultLayout
@@ -105,7 +107,7 @@ const IndexPage = () => {
               key={post.node.id}
             />
           ))}
-          {posts.length >= postPerPage ? (
+          {totalPosts > 4 ? (
             <Box textAlign="center" mt={4}>
               <LinkButton to={`/${blogPath}/`}>See More Posts</LinkButton>
             </Box>

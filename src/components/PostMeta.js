@@ -25,9 +25,19 @@ const PostMetaContainer = styled(Box)`
     margin-right: ${({ theme }) => theme.space.sm}px;
   }
 
+  .post-meta-item,
   .post-meta-author {
     display: block;
   }
+
+  ${({ theme }) => `${theme.mediaQueries.sm} {
+    .post-meta-item {
+      display: inline;
+    }
+    .post-meta-author {
+      display: block;
+    }
+  }`};
 `;
 
 const PostMeta = ({ postMeta, ...others }) => {
