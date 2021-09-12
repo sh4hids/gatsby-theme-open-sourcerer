@@ -32,7 +32,8 @@ const HeaderMenuWrapper = styled.ul`
       display: inline-block;
       width: 100%;
       padding: ${({ theme }) => theme.space.lg}px;
-      font-size: ${({ theme }) => theme.fontSizes.h5}px;
+      font-size: ${({ theme }) => theme.fontSizes.h5};
+      font-weight: ${({ theme }) => theme.fontWeights.medium};
       color: var(--color-text-1);
       position: relative;
       z-index: 1;

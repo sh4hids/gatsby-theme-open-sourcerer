@@ -16,7 +16,7 @@ const TagWrapper = styled(Box)`
     text-align: center;
     padding: ${({ theme }) => theme.space.lg}px 0;
     display: inline-block;
-    font-size: ${({ theme }) => theme.fontSizes.body}px;
+    font-size: ${({ theme }) => theme.fontSizes.body};
     background-color: var(--color-bg-1);
     color: var(--color-text-0);
     border-radius: 8px;

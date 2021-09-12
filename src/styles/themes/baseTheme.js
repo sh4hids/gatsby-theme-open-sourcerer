@@ -1,6 +1,17 @@
 /* eslint-disable prefer-destructuring */
 const space = [0, 4, 8, 16, 32, 64];
-const fontSizes = [13, 15, 18, 22, 26, 31, 37, 45, 54, 65];
+const fontSizes = [
+  `0.694rem`,
+  `0.833rem`,
+  `calc(18px + 4 * ((100vw - 400px) / 1200))`,
+  `1.2rem`,
+  `1.44rem`,
+  `1.728rem`,
+  `2.074rem`,
+  `2.488rem`,
+  `2.986rem`,
+  `3.583rem`,
+];
 const fonts = {
   body: `'Fira Sans', sans-serif`,
 };
@@ -40,7 +51,7 @@ space.xxl = space[5];
 fontSizes.label2 = fontSizes[0];
 fontSizes.label1 = fontSizes[1];
 fontSizes.body = fontSizes[2];
-fontSizes.h6 = fontSizes[2];
+fontSizes.h6 = `1rem`;
 fontSizes.h5 = fontSizes[3];
 fontSizes.h4 = fontSizes[4];
 fontSizes.h3 = fontSizes[5];

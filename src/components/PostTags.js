@@ -17,7 +17,7 @@ const TagListWrapper = styled.ul`
     margin: 0 ${({ theme }) => theme.space.lg}px
       ${({ theme }) => theme.space.lg}px 0;
     display: inline-block;
-    font-size: ${({ theme }) => theme.fontSizes.body}px;
+    font-size: ${({ theme }) => theme.fontSizes.body};
     background-color: var(--color-text-0);
     border-radius: 8px;
     padding: 0 8px;

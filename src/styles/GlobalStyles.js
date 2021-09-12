@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--color-bg-0);
     color: var(--color-text-0);
     font-family: ${({ theme }) => theme.fonts.body};
-    font-size: ${({ theme }) => theme.fontSizes.body}px;
+    font-size: ${({ theme }) => theme.fontSizes.body};
     line-height: ${({ theme }) => theme.lineHeights.body};
   }
 
@@ -26,27 +26,27 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: ${({ theme }) => theme.fontSizes.h1}px;
+    font-size: ${({ theme }) => theme.fontSizes.h1};
   }
   
   h2 {
-    font-size: ${({ theme }) => theme.fontSizes.h2}px;
+    font-size: ${({ theme }) => theme.fontSizes.h2};
   }
   
   h3 {
-    font-size: ${({ theme }) => theme.fontSizes.h3}px;
+    font-size: ${({ theme }) => theme.fontSizes.h3};
   }
   
   h4 {
-    font-size: ${({ theme }) => theme.fontSizes.h4}px;
+    font-size: ${({ theme }) => theme.fontSizes.h4};
   }
   
   h5 {
-    font-size: ${({ theme }) => theme.fontSizes.h5}px;
+    font-size: ${({ theme }) => theme.fontSizes.h5};
   }
   
   h6 {
-    font-size: ${({ theme }) => theme.fontSizes.h6}px;
+    font-size: ${({ theme }) => theme.fontSizes.h6};
   }
 
   a {
@@ -72,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
     margin: ${({ theme }) => theme.space.lg}px 0;
     padding: 0 ${({ theme }) => theme.space.lg}px;
     border-left: 4px solid ${({ theme }) => theme.colors.primary0};
-    font-size: ${({ theme }) => theme.fontSizes.h5}px;
+    font-size: ${({ theme }) => theme.fontSizes.h5};
     font-style: italic;
     line-height: ${({ theme }) => theme.lineHeights.heading};
   }
@@ -92,7 +92,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
 
     li {
-      font-size: ${({ theme }) => theme.fontSizes.body}px;
+      font-size: ${({ theme }) => theme.fontSizes.body};
       font-weight: ${({ theme }) => theme.fontWeights.normal};
       line-height: ${({ theme }) => theme.lineHeights.list};
 
