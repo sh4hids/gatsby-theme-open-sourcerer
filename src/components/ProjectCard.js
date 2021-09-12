@@ -19,6 +19,7 @@ const Wrapper = styled.a`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  word-break: break-word;
 
   h1,
   h2,
@@ -55,6 +56,10 @@ const Wrapper = styled.a`
       }
     }
   }
+
+  ${({ theme }) => `${theme.mediaQueries.sm} {
+    min-height: 420px;
+  `};
 `;
 
 const ProjectCard = ({ project, ...props }) => {
