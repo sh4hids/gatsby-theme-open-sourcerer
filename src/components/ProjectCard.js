@@ -15,7 +15,7 @@ const Wrapper = styled.a`
   box-shadow: ${({ theme }) => theme.elevations[0]};
   padding: ${({ theme }) => theme.space.xl}px;
   transition: all ease-in-out 0.3s;
-  min-height: 300px;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,10 +56,6 @@ const Wrapper = styled.a`
       }
     }
   }
-
-  ${({ theme }) => `${theme.mediaQueries.sm} {
-    min-height: 420px;
-  `};
 `;
 
 const ProjectCard = ({ project, ...props }) => {

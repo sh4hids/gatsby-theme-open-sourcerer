@@ -1,16 +1,16 @@
 /* eslint-disable prefer-destructuring */
 const space = [0, 4, 8, 16, 32, 64];
 const fontSizes = [
-  `calc(13px + 4 * ((100vw - 400px) / 1200))`,
-  `calc(15px + 4 * ((100vw - 400px) / 1200))`,
-  `calc(18px + 4 * ((100vw - 400px) / 1200))`,
-  `calc(22px + 4 * ((100vw - 400px) / 1200))`,
-  `calc(26px + 4 * ((100vw - 400px) / 1200))`,
-  `calc(31px + 4 * ((100vw - 400px) / 1200))`,
-  `calc(37px + 4 * ((100vw - 400px) / 1200))`,
-  `calc(45px + 4 * ((100vw - 400px) / 1200))`,
-  `calc(54px + 4 * ((100vw - 400px) / 1200))`,
-  `calc(65px + 4 * ((100vw - 400px) / 1200))`,
+  `13px`,
+  `15px`,
+  `18px`,
+  `22px`,
+  `26px`,
+  `31px`,
+  `37px`,
+  `45px`,
+  `54px`,
+  `65px`,
 ];
 const fonts = {
   body: `'Fira Sans', sans-serif`,
