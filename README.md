@@ -4,7 +4,7 @@ A configurable and performant minimal gatsby portfolio theme for open source dev
 
 ### [Live Demo](https://gatsby-theme-open-sourcerer.netlify.app/)
 
-![gatsby-theme-open-sourcerer](./screenshots/gatsby-theme-open-sourcerer.png)
+![gatsby-theme-open-sourcerer](https://raw.githubusercontent.com/sh4hids/gatsby-theme-open-sourcerer/main/screenshots/gatsby-theme-open-sourcerer.png)
 
 ## Installing the theme
 
@@ -148,6 +148,12 @@ If you want to help in any way to make the theme better, you are welcome. Some o
 - Reporting an issue (bug)
 - Improving the documentation (README)
 - Adding your site to the showcase section
+
+## Want to offer me a Cofee?
+
+If you like the theme and want to buy me a coffee, please follow the link 👇
+
+<a href="https://www.buymeacoffee.com/sh4hids" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## Sites built with this theme
 
