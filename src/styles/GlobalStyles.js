@@ -105,6 +105,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .post-body {
+    word-break: break-word;
+    
     p {
       margin: 2rem 0;
 
