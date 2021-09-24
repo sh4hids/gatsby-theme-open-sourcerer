@@ -15,7 +15,6 @@ const UtterancesComments = () => {
       site {
         siteMetadata {
           utterancesCommentRepo
-          utterancesCommentTheme
         }
       }
     }
