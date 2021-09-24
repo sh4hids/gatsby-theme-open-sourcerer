@@ -34,6 +34,7 @@ const config = {
       twitter: 'https://twitter.com/danvercoder9',
     },
   },
+  utterancesCommentRepo: '',
   footer: {
     title: 'Words of Thanks',
     description:

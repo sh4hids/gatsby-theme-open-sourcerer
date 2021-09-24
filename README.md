@@ -137,6 +137,10 @@ Example:
 import { Box } from '@shahids/gatsby-theme-open-sourcerer/src/components';
 ```
 
+## Adding post comment
+
+The theme has the commenting feature on the article page, which uses [utterances](https://utteranc.es/) under the hood. `utterances` is a lightweight comments widget built on GitHub issues. To set up `utterances`, you have to create a public GitHub repository and add [utterances](https://github.com/apps/utterances) app on that repo. Now add `utterancesCommentRepo` key in your theme config file (`your-site/src/config/index.js`) with your repository name as a value (i.e. `sh4hids/shahid.pro-comments`).
+
 ## Performance
 
 ![Performance](./screenshots/performance.png)

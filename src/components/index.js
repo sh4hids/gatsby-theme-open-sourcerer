@@ -43,3 +43,4 @@ export { default as TwitterIcon } from './TwitterIcon';
 export { default as TwitterSquareIcon } from './TwitterSquareIcon';
 export { default as UserIcon } from './UserIcon';
 export { default as UsesList } from './UsesList';
+export { default as UtterancesComments } from './UtterancesComments';

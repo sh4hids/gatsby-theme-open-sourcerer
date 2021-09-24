@@ -3,14 +3,19 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import urljoin from 'url-join';
 
-import { Text, SocialShareLinks, PostTags } from '../components';
+import {
+  Text,
+  SocialShareLinks,
+  PostTags,
+  UtterancesComments,
+} from '../components';
 import { DefaultLayout } from '../layouts';
 
 const Post = ({ pageContext, data }) => {
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
   const author = data.site.siteMetadata.author.fullName;
-  const { siteUrl, blogPath } = data.site.siteMetadata;
+  const { siteUrl, blogPath, utterancesCommentRepo } = data.site.siteMetadata;
 
   return (
     <DefaultLayout
@@ -29,6 +34,7 @@ const Post = ({ pageContext, data }) => {
         title={post.title}
         link={urljoin(siteUrl, blogPath, pageContext.slug)}
       />
+      {utterancesCommentRepo ? <UtterancesComments /> : <></>}
     </DefaultLayout>
   );
 };
@@ -39,6 +45,7 @@ export const pageQuery = graphql`
       siteMetadata {
         siteUrl
         blogPath
+        utterancesCommentRepo
         author {
           fullName
         }
