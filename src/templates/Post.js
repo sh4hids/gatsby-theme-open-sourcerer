@@ -15,7 +15,14 @@ const Post = ({ pageContext, data }) => {
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
   const author = data.site.siteMetadata.author.fullName;
-  const { siteUrl, blogPath, utterancesCommentRepo } = data.site.siteMetadata;
+  const { siteUrl, blogPath, utterancesCommentRepo, baseEditUrl } =
+    data.site.siteMetadata;
+  const editUrl = baseEditUrl
+    ? `${baseEditUrl}${pageContext.slug.slice(
+        11,
+        pageContext.slug.length - 1
+      )}.md`
+    : '';
 
   return (
     <DefaultLayout
@@ -29,6 +36,13 @@ const Post = ({ pageContext, data }) => {
       description={postNode.excerpt}
     >
       <Text variant="raw" html={postNode.html} className="post-body" />
+      {editUrl ? (
+        <Text variant="label1">
+          Edit this post <a href={editUrl}>here</a>.
+        </Text>
+      ) : (
+        <></>
+      )}
       <PostTags tags={post.tags || {}} blogPath={blogPath} />
       <SocialShareLinks
         title={post.title}
@@ -45,6 +59,7 @@ export const pageQuery = graphql`
       siteMetadata {
         siteUrl
         blogPath
+        baseEditUrl
         utterancesCommentRepo
         author {
           fullName

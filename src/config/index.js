@@ -12,6 +12,8 @@ const config = {
   pathPrefix: '/',
   blogPath: 'blog',
   blogTitle: 'Blog',
+  baseEditUrl:
+    'https://github.com/sh4hids/gatsby-theme-open-sourcerer/edit/main/contents/blog',
   postPerPage: 8,
   socialShareTitle: '-: SHARE :-',
   manifest: {
