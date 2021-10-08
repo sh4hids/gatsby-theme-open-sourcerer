@@ -7,6 +7,7 @@ export { default as ChevronLeftIcon } from './ChevronLeftIcon';
 export { default as ChevronRightIcon } from './ChevronRightIcon';
 export { default as ClockIcon } from './ClockIcon';
 export { default as Container } from './Container';
+export { default as Divider } from './Divider';
 export { default as FacebookIcon } from './FacebookIcon';
 export { default as FacebookSquareIcon } from './FacebookSquareIcon';
 export { default as Footer } from './Footer';

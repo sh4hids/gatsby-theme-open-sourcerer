@@ -12,6 +12,7 @@ const config = {
   pathPrefix: '/',
   blogPath: 'blog',
   blogTitle: 'Blog',
+  baseEditUrl: '',
   postPerPage: 8,
   socialShareTitle: '-: SHARE :-',
   manifest: {
