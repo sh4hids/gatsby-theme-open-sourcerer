@@ -8,6 +8,7 @@ import {
   SocialShareLinks,
   PostTags,
   UtterancesComments,
+  Divider,
 } from '../components';
 import { DefaultLayout } from '../layouts';
 
@@ -37,9 +38,13 @@ const Post = ({ pageContext, data }) => {
     >
       <Text variant="raw" html={postNode.html} className="post-body" />
       {editUrl ? (
-        <Text variant="label1">
-          Edit this post <a href={editUrl}>here</a>.
-        </Text>
+        <>
+          <Divider mt={4} mb={3} width="8rem" />
+          <Text variant="label1">
+            Edit this post <a href={editUrl}>here</a>.
+          </Text>
+          <Divider mt={3} mb={4} width="8rem" />
+        </>
       ) : (
         <></>
       )}

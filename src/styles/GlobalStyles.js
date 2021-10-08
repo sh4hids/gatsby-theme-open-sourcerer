@@ -66,15 +66,24 @@ const GlobalStyle = createGlobalStyle`
 
   blockquote {
     p {
-      margin: 0;
+      &:first-child {
+        margin-top: 0;
+      }
+ 
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     margin: ${({ theme }) => theme.space.lg}px 0;
-    padding: 0 ${({ theme }) => theme.space.lg}px;
+    padding: ${({ theme }) => theme.space.xl}px;
     border-left: 4px solid ${({ theme }) => theme.colors.primary0};
     font-size: ${({ theme }) => theme.fontSizes.h5};
     font-style: italic;
     line-height: ${({ theme }) => theme.lineHeights.heading};
+    background-color: var(--color-bg-1);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
 
   .gatsby-highlight {

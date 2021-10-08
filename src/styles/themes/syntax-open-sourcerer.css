@@ -7,8 +7,9 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  color: #f6f6f9;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  color: var(--color-text-1);
+  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+    monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -27,22 +28,6 @@ pre[class*='language-'] {
   hyphens: none;
 }
 
-pre[class*='language-']::-moz-selection,
-pre[class*='language-'] ::-moz-selection,
-code[class*='language-']::-moz-selection,
-code[class*='language-'] ::-moz-selection {
-  text-shadow: none;
-  background: rgba(29, 59, 83, 0.99);
-}
-
-pre[class*='language-']::selection,
-pre[class*='language-'] ::selection,
-code[class*='language-']::selection,
-code[class*='language-'] ::selection {
-  text-shadow: none;
-  background: rgba(29, 59, 83, 0.99);
-}
-
 @media print {
   code[class*='language-'],
   pre[class*='language-'] {
@@ -59,15 +44,21 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  color: #f6f6f9;
-  background: rgba(39, 40, 63, 0.96);
+  color: var(--color-text-2);
+  background: var(--color-bg-1);
 }
 
 :not(pre) > code[class*='language-'] {
   padding: 0.1em 0.3em 0.2em 0.3em;
   border-radius: 0.3em;
   white-space: normal;
-  background: rgba(78, 78, 108, 0.6);
+  background: transparent;
+  font-weight: bold;
+}
+
+:not(pre) > code[class*='language-']::before,
+:not(pre) > code[class*='language-']::after {
+  content: '`';
 }
 
 .token.comment,
@@ -98,7 +89,7 @@ pre[class*='language-'] {
 .token.tag,
 .token.operator,
 .token.keyword {
-  color: rgb(127, 219, 202);
+  color: var(--color-success-1);
 }
 
 .token.boolean {
@@ -113,7 +104,7 @@ pre[class*='language-'] {
 .token.function,
 .token.builtin,
 .token.char {
-  color: rgb(130, 170, 255);
+  color: var(--color-accent-1);
 }
 
 .token.selector,
@@ -124,7 +115,7 @@ pre[class*='language-'] {
 
 .token.attr-name,
 .token.inserted {
-  color: rgb(173, 219, 103);
+  color: var(--color-success-2);
   font-style: italic;
 }
 
@@ -133,7 +124,7 @@ pre[class*='language-'] {
 .token.entity,
 .language-css .token.string,
 .style .token.string {
-  color: rgb(173, 219, 103);
+  color: var(--color-success-2);
 }
 
 .token.class-name,
@@ -145,7 +136,7 @@ pre[class*='language-'] {
 .token.regex,
 .token.important,
 .token.variable {
-  color: rgb(214, 222, 235);
+  color: var(--color-text-1);
 }
 
 .token.important,
