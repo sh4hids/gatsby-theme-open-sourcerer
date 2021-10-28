@@ -1,7 +1,7 @@
 {
   "name": "@sh4hids/gatsby-theme-open-sourcerer",
   "description": "A configurable minimal gatsby portfolio theme for open source developers.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "index.js",
   "author": {
