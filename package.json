@@ -27,7 +27,6 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.13.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -51,6 +50,7 @@
     "@mdx-js/react": "^1.6.22",
     "@styled-icons/fa-brands": "^10.38.0",
     "@styled-icons/feather": "^10.34.0",
+    "babel-plugin-styled-components": "^1.13.3",
     "date-fns": "^2.23.0",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-manifest": "^4.0.0",
